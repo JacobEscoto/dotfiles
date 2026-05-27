@@ -28,6 +28,10 @@ return {
             visible = true,
             hide_dotfiles = false,
             hide_gitignored = false,
+            never_show = {
+              ".git",
+              ".DS_Store"
+            }
           },
           follow_current_file = {
             enabled = true,
