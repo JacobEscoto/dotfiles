@@ -35,5 +35,8 @@ set -g fish_color_selection --background=151e3d
 set -g fish_color_operator 0492c2
 set -g fish_color_escape cba6f7
 
+# Initialize Zoxide
+zoxide init fish | source
+
 # Initialize Starship
 starship init fish | source
