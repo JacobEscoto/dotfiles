@@ -21,24 +21,16 @@ map("v", "<C-c>", '"+y')                        -- Copy text in visual mode (Ctr
 map("n", "<C-z>", "u")                          -- Undo in normal mode (Ctrl + Z)
 map("n", "<C-y>", "<C-r>")                       -- Redo in normal mode (Ctrl + Y)
 
-map("n", "<leader>tn", ":tabnew<CR>")           -- New tab (Space + t + n)
-map("n", "<leader>tc", ":tabclose<CR>")         -- Close current tab (Space + t + c)
-map("n", "<leader>tl", ":tabnext<CR>")          -- Next tab (Space + t + l)
-map("n", "<leader>th", ":tabprevious<CR>")      -- Previous tab (Space + t + h)
-
-map("n", "<leader>st", ":botright split | terminal<CR>i")   -- Open terminal (Space + s + t)
-map("t", "<Esc>", [[<C-\><C-n>]])                           -- Exit terminal mode (Esc)
-
 -- Move between windows/panes (including terminal) with Ctrl + arrows
 map("n", "<C-Left>", "<C-w>h")
 map("n", "<C-Down>", "<C-w>j")
 map("n", "<C-Up>", "<C-w>k")
 map("n", "<C-Right>", "<C-w>l")
 
-map('t', '<C-Left>', [[<C-\><C-n><C-w>h]])
-map('t', '<C-Down>', [[<C-\><C-n><C-w>j]])
-map('t', '<C-Up>', [[<C-\><C-n><C-w>k]])
-map('t', '<C-Right>', [[<C-\><C-n><C-w>l]])
+map("t", "<C-Left>", [[<C-\><C-n><C-w>h]])
+map("t", "<C-Down>", [[<C-\><C-n><C-w>j]])
+map("t", "<C-Up>", [[<C-\><C-n><C-w>k]])
+map("t", "<C-Right>", [[<C-\><C-n><C-w>l]])
 
 map("n", "<leader>c", function()
   local current_buf = vim.api.nvim_get_current_buf()
