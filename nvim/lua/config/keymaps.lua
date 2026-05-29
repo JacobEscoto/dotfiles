@@ -9,19 +9,20 @@ map("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Toggle file explorer" })
 
 -- Telescope
 map("n", "<leader>ff", ":Telescope find_files<CR>", { desc = "Find files" })
-map("n", "<leader>fg", ":Telescope live_grep<CR>", { desc = "Live grep" })
+map("n", "<leader>fg", ":Telescope live_grep<CR>", { desc = "Live grep (text)" })
 map("n", "<leader>fb", ":Telescope buffers<CR>", { desc = "List buffers" })
 
 -- ToggleTerm
 map("n", "<C-\\>", ":ToggleTerm<CR>", { desc = "Open floating terminal" })
 map("t", "<C-\\>", "<C-\\><C-n>:ToggleTerm<CR>", { desc = "Exit terminal mode and close" })
 
-map("n", "<C-a>", "ggVG")                       -- Select all text (Ctrl + A)
-map("v", "<C-c>", '"+y')                        -- Copy text in visual mode (Ctrl + C)
-map("n", "<C-z>", "u")                          -- Undo in normal mode (Ctrl + Z)
-map("n", "<C-y>", "<C-r>")                       -- Redo in normal mode (Ctrl + Y)
+-- Editor Shortcuts
+map("n", "<C-a>", "ggVG", { desc = "Select all" })
+map("v", "<C-c>", '"+y', { desc = "Copy Selected Text" })
+map("n", "<C-z>", "u", { desc = "Undo change (normal mode)" })
+map("n", "<C-y>", "<C-r>", { desc = "Redo change (normal mode)" })
 
--- Move between windows/panes (including terminal) with Ctrl + arrows
+-- Move between windows/panes (including terminal)
 map("n", "<C-Left>", "<C-w>h")
 map("n", "<C-Down>", "<C-w>j")
 map("n", "<C-Up>", "<C-w>k")
