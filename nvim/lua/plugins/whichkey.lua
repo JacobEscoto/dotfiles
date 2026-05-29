@@ -20,12 +20,14 @@ return {
       },
 
       spec = {
-        { "<C-\\>", group = "Terminal", icon = "  " },
         { "<leader>f", group = "Search", icon = "󰍉 " },
         { "<leader>e", group = "Explorer" },
         { "<leader>q", group = "Exit" },
         { "<leader>l", group = "Lazy" },
-        { "<leader>m", group = "Mason" },
+
+        { "<leader>x", group = "Errors (Trouble)" },
+        { "<leader>xx", "<cmd>Trouble diagnostics toggle<CR>", desc = "View File Errors" },
+        { "<leader>xq", "<cmd>Trouble qflist toggle<CR>", desc = "Viw Quickfix List" },
       },
     },
     keys = {
