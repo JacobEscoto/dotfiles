@@ -4,6 +4,18 @@ local function map(mode, lhs, rhs, opts)
     vim.keymap.set(mode, lhs, rhs, options)
 end
 
+-- Neotree (File Explorer)
+map("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Toggle file explorer" })
+
+-- Telescope
+map("n", "<leader>ff", ":Telescope find_files<CR>", { desc = "Find files" })
+map("n", "<leader>fg", ":Telescope live_grep<CR>", { desc = "Live grep" })
+map("n", "<leader>fb", ":Telescope buffers<CR>", { desc = "List buffers" })
+
+-- ToggleTerm
+map("n", "<C-\\>", ":ToggleTerm<CR>", { desc = "Open floating terminal" })
+map("t", "<C-\\>", "<C-\\><C-n>:ToggleTerm<CR>", { desc = "Exit terminal mode and close" })
+
 map("n", "<C-a>", "ggVG")                       -- Select all text (Ctrl + A)
 map("v", "<C-c>", '"+y')                        -- Copy text in visual mode (Ctrl + C)
 map("n", "<C-z>", "u")                          -- Undo in normal mode (Ctrl + Z)
@@ -36,7 +48,7 @@ map("n", "<leader>c", function()
     return
   end
 
-  vim.cmd("bdelete")
+  Snacks.bufdelete()
 end, { desc = "Close the current file and show Dashboard" })
 
 map("n", "<leader>q", ":qa!<CR>", { silent = true, desc = "Force Exit Neovim" })

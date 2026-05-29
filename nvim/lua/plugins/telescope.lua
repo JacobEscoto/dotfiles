@@ -10,11 +10,6 @@ return {
             },
             "nvim-tree/nvim-web-devicons",
         },
-        keys = {
-            { "<leader>ff", ":Telescope find_files<CR>", desc = "Buscar Archivos por Nombre", silent = true },
-            { "<leader>fg", ":Telescope live_grep<CR>",  desc = "Buscar Texto en los Archivos", silent = true },
-            { "<leader>fb", ":Telescope buffers<CR>",    desc = "Ver Pestañas/Buffers Abiertos", silent = true },
-        },
         config = function ()
             local telescope = require("telescope")
             local actions = require("telescope.actions")

@@ -8,9 +8,6 @@ return {
       "MunifTanjim/nui.nvim",
     },
     lazy = false,
-    keys = {
-      { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Toggle File Explorer", silent = true },
-    },
     config = function()
       require("neo-tree").setup({
         close_if_last_window = true,
