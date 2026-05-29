@@ -18,7 +18,15 @@ return {
         sections = {
           lualine_a = { { "mode", separator = { left = "", right = "" } } },
           lualine_b = { "branch", "diff", "diagnostics" },
-          lualine_c = { { "filename", file_status = true, path = 1 } },
+          lualine_c = {
+            { "filename", file_status = true, path = 1 },
+            {
+              "navic",
+              color_correction = "nil",
+
+              cond = function() return require("nvim-navic").is_available() end
+            }
+          },
           lualine_x = { "encoding", "fileformat", "filetype" },
           lualine_y = { "progress" },
           lualine_z = { { "location", separator = { left = "", right = "" } } },

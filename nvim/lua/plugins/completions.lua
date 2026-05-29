@@ -8,10 +8,15 @@ return {
       "hrsh7th/cmp-path",
       "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
+      "roobert/tailwindcss-colorizer-cmp.nvim",
     },
     config = function()
       local cmp = require("cmp")
       local luasnip = require("luasnip")
+
+      require("tailwindcss-colorizer-cmp").setup({
+        color_square_width = 2,
+      })
 
       cmp.setup({
         snippet = {
@@ -22,6 +27,11 @@ return {
           completion = cmp.config.window.bordered(),
           documentation = cmp.config.window.bordered(),
         },
+
+        formatting = {
+          format = require("tailwindcss-colorizer-cmp").formatter,
+        },
+
         mapping = cmp.mapping.preset.insert({
           ["<C-k>"] = cmp.mapping.select_prev_item(),
           ["<C-j>"] = cmp.mapping.select_next_item(),
