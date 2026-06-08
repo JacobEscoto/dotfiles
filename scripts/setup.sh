@@ -42,7 +42,7 @@ brew update
 brew install \
   fish neovim tmux yazi starship \
   node@24 pnpm eza bat fd fzf ripgrep glow zoxide gh \
-  micro sevenzip
+  lazygit micro sevenzip
 
 echo ""
 
