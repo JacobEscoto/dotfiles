@@ -86,6 +86,7 @@ Updates Homebrew packages, Neovim plugins, Fish plugins, and pnpm in one command
 | `<leader>ff` | Find files (Telescope)   |
 | `<leader>fg` | Live grep (text search)  |
 | `<leader>`fb | List open buffers        |
+| `<leader>lg` | Open LazyGit layout      |
 | `<C-\>`      | Open floating terminal   |
 | `<C-\>`      | Close terminal           |
 | `<leader>c`  | Close current buffer     |
