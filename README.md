@@ -1,4 +1,8 @@
-# dotfiles - JacobEscoto
+# Dotfiles - JacobEscoto
+
+[![WSL2](https://img.shields.io/badge/WSL-Debian-blue?style=for-the-badge&logo=linux&logoColor=white)](https://learn.microsoft.com/en-us/windows/wsl/)
+[![Fish](https://img.shields.io/badge/Shell-Fish-brightgreen?style=for-the-badge&logo=fishshell&logoColor=white)](https://fishshell.com/)
+[![Starship](https://img.shields.io/badge/Prompt-Starship-orange?style=for-the-badge&logo=starship&logoColor=white)](https://starship.rs/)
 
 My personal development environment for WSL2(Debian), centered around Fish and curated set of CLI tools.
 
