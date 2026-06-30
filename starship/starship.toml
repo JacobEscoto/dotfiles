@@ -46,7 +46,7 @@ disabled = true
 
 [cmd_duration]
 min_time = 2_000
-format = "[⏱ $duration ](fg:mauve)"
+format = "[in $duration ](fg:mauve)"
 
 
 [custom.giturl]
@@ -109,32 +109,32 @@ ignore_timeout = true
 
 [nodejs]
 symbol = ""
-format = "[$symbol $version ]($style)"
+format = "[$symbol ]($style)"
 
 [c]
 symbol = " "
-format = "[$symbol $version ]($style)"
+format = "[$symbol ]($style)"
 
 
 [rust]
 symbol = ""
-format = "[$symbol $version ]($style)"
+format = "[$symbol ]($style)"
 
 [golang]
 symbol = ""
-format = "[$symbol $version ]($style)"
+format = "[$symbol ]($style)"
 
 [php]
 symbol = ""
-format = "[$symbol $version ]($style)"
+format = "[$symbol ]($style)"
 
 [java]
 symbol = " "
-format = "[$symbol $version ]($style)"
+format = "[$symbol ]($style)"
 
 [python]
 symbol = ""
-format = "[$symbol $version ]($style)"
+format = "[$symbol ]($style)"
 
 [palettes.custom]
 # Background
