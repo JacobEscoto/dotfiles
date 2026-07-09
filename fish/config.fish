@@ -20,6 +20,8 @@ if test -d /home/linuxbrew/.linuxbrew
     /home/linuxbrew/.linuxbrew/bin/brew shellenv | source
 end
 
+set -gx PATH "$HOME/.local/bin" "$HOME/go/bin" $PATH
+
 # Syntax Colors
 set -g fish_color_command 76abdf
 set -g fish_color_param c9ffe5
