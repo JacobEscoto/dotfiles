@@ -1,3 +1,7 @@
+-- Set leader keys
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- Line numbers
 vim.wo.number = true
 vim.wo.relativenumber = true

@@ -1,7 +1,3 @@
--- Set leader key to Space
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 vim.keymap.set("n", "<C-s>", "<cmd>w<cr>", { desc = "Save file (normal mode)" })
 vim.keymap.set("i", "<C-s>", "<Esc><cmd>w<cr>", { desc = "Save file (insert mode)" })
 vim.keymap.set("v", "<C-s>", "<Esc><cmd>w<cr>", { desc = "Save file (visual mode)" })
