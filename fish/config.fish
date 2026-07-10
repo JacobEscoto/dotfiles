@@ -15,11 +15,18 @@ abbr -a treell "eza --icons=always --tree --long --header --git --ignore-glob='n
 abbr -a lsd "eza --icons=always --only-dirs"
 abbr -a lsf "eza --icons=always --only-files"
 
+# Abbreviation for LazyGit
+abbr -a lg lazygit
+
 # Environment Configuration
 if test -d /home/linuxbrew/.linuxbrew
     /home/linuxbrew/.linuxbrew/bin/brew shellenv | source
 end
 
+#
+set -gx MICRO_TRUECOLOR 1
+
+#
 set -gx PATH "$HOME/.local/bin" "$HOME/go/bin" $PATH
 
 # Syntax Colors
