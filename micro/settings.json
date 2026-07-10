@@ -1,8 +1,28 @@
 {
-  "autoindent": true,
-  "autosave": 0,
-  "backup": false,
-  "clipboard": "external",
   "tabsize": 2,
-  "wordwrap": false
+  "tabstospaces": true,
+  "autoindent": true,
+  "smartindent": true,
+
+  "cursorline": true,
+  "statusline": true,
+  "ruler": true,
+  "scrollmargin": 4,
+
+  "softwrap": false,
+  "wordwrap": false,
+
+  "clipboard": "external",
+
+  "savecursor": true,
+  "saveundo": true,
+
+  "rmtrailingws": true,
+  "eofnewline": true,
+
+  "autosave": 0,
+
+  "ignorecase": true,
+
+  "colorscheme": "dracula"
 }

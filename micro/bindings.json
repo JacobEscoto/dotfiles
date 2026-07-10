@@ -1,0 +1,7 @@
+{
+  "Alt-Up": "MoveLinesUp",
+  "Alt-Down": "MoveLinesDown",
+  "Ctrl-/": "lua:comment.comment",
+  "Ctrl-Shift-K": "DeleteLine",
+  "Alt-s": "Save,Quit"
+}
