@@ -1,0 +1,53 @@
+# Echo Theme for Micro
+
+color-link default "#DCE0E5,#12151A"
+color-link comment "#5D636F"
+
+color-link identifier "#DCE0E5"
+color-link identifier.var "#DCE0E5"
+color-link identifier.class "#73B3D4"
+color-link identifier.macro "#73B3D4"
+color-link identifier.function "#73B3D4"
+
+
+color-link constant "#96E0DD"
+color-link constant.number "#E0DF7E"
+color-link constant.string "#9ACC93"
+color-link constant.string.url "underline #9ACC93"
+color-link constant.bool "#96E0DD"
+color-link constant.specialChar "#F3B1A0"
+
+color-link symbol "#5A93B0"
+color-link symbol.brackets "#B5BBC9"
+color-link symbol.tag "#73B3D4"
+color-link symbol.tag.extended "#73B3D4"
+color-link symbol.operator "#5A93B0"
+
+color-link type "italic #73B3D4"
+color-link type.keyword "#77E687"
+
+color-link special "#89B4FA"
+color-link statement "#89B4FA"
+color-link preproc "#E5B4E2"
+color-link preproc.keyword "#E5B4E2"
+
+color-link underlined "#73B3D4"
+color-link error "bold #D64950"
+color-link todo "bold #E0DF7E"
+
+color-link diff-added "#4DD07E"
+color-link diff-modified "#D3B020"
+color-link diff-deleted "#EC98A0"
+
+color-link gutter-error "#D64950"
+color-link gutter-warning "#D3B020"
+
+color-link statusline "#B5BBC9,#191D24"
+color-link tabbar "#B5BBC9,#191D24"
+color-link indent-char "#1C2028"
+color-link line-number "#484F5E"
+color-link current-line-number "#DCE0E5"
+
+color-link cursor-line "#16191F"
+color-link color-column "#1C2028"
+color-link type.extended "default"
