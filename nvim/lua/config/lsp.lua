@@ -28,7 +28,7 @@ vim.lsp.config("lua-language-server", {
     Lua = {
       runtime = {
         version = "LuaJIT",
-        path = vim.split(package.path, ";")
+        path = vim.split(package.path, ";"),
       },
       diagnostics = {
         globals = { "vim" },

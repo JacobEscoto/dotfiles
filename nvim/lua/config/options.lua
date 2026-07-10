@@ -3,20 +3,20 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Line numbers
-vim.wo.number = true
-vim.wo.relativenumber = true
+vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- Indentation
-vim.bo.expandtab = true
-vim.bo.tabstop = 2
-vim.bo.shiftwidth = 2
-vim.bo.softtabstop = 2
-vim.bo.autoindent = true
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.autoindent = true
 
 -- UI / movement
-vim.wo.cursorline = true
+vim.opt.cursorline = true
 
 -- System
 vim.opt.clipboard = "unnamedplus"
-vim.o.termguicolors = true
-vim.o.updatetime = 250
+vim.opt.termguicolors = true
+vim.opt.updatetime = 250
