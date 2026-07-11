@@ -23,6 +23,12 @@ if test -d /home/linuxbrew/.linuxbrew
     /home/linuxbrew/.linuxbrew/bin/brew shellenv | source
 end
 
+# Start ssh-agent and load private key if not active
+if not set -q SSH_AUTH_SOCK
+  eval (ssh-agent -c) > /dev/null
+  ssh-add ~/.ssh/id_22519 2> /dev/null
+end
+
 #
 set -gx MICRO_TRUECOLOR 1
 
