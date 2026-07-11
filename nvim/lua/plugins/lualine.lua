@@ -11,7 +11,7 @@ return {
           theme = "palenight",
           component_separators = { left = "", right = "" },
           section_separators = { left = "", right = "" },
-          global_status = false,
+          global_status = true,
         },
         sections = {
           lualine_a = { "mode" },
