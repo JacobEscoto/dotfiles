@@ -12,6 +12,11 @@ return {
     },
     opts = {
       ensure_installed = {
+        --Languages
+        "gopls",
+        "lua_ls",
+        "bashls",
+
         -- Formatters
         "stylua",
         "shfmt",

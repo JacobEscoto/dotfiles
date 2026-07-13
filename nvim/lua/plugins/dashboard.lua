@@ -25,12 +25,60 @@ return {
             {
               icon = "󰱼 ",
               icon_hl = "Title",
-              desc = "Find files            ",
+              desc = "Find file            ",
               desc_hl = "String",
               key = "f",
               key_hl = "Number",
               key_format = "%s",
               action = "lua Snacks.picker.files()",
+            },
+            {
+              icon = " ",
+              icon_hl = "Title",
+              desc = "New file            ",
+              desc_hl = "String",
+              key = "n",
+              key_hl = "Number",
+              key_format = "%s",
+              action = function()
+                vim.ui.input({ prompt = "New file name: " }, function(name)
+                  if name and name ~= "" then
+                    vim.cmd.edit(name)
+                  end
+                end)
+              end,
+            },
+            {
+              icon = "󰑓 ",
+              icon_hl = "Title",
+              desc = "Restore Session            ",
+              desc_hl = "String",
+              key = "s",
+              key_hl = "Number",
+              key_format = "%s",
+              action = function()
+                PersistedSnacksPicker()
+              end,
+            },
+            {
+              icon = "󰒲 ",
+              icon_hl = "Title",
+              desc = "Lazy            ",
+              desc_hl = "String",
+              key = "L",
+              key_hl = "Number",
+              key_format = "%s",
+              action = "Lazy",
+            },
+            {
+              icon = "󰈆 ",
+              icon_hl = "Title",
+              desc = "Quit Neovim            ",
+              desc_hl = "String",
+              key = "q",
+              key_hl = "Number",
+              key_format = "%s",
+              action = "quit",
             },
           },
           footer = {},
