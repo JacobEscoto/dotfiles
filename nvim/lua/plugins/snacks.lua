@@ -16,11 +16,6 @@ return {
         enabled = true,
         timeout = 3000,
       },
-      terminal = {
-        win = {
-          style = "terminal",
-        },
-      },
       quickfile = { enabled = true },
       scope = { enabled = true },
       picker = {
