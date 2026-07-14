@@ -1,76 +1,97 @@
 # Dotfiles - JacobEscoto
 
-[![WSL2](https://img.shields.io/badge/WSL-Debian-blue?style=for-the-badge&logo=linux&logoColor=white)](https://learn.microsoft.com/en-us/windows/wsl/)
-[![Fish](https://img.shields.io/badge/Shell-Fish-brightgreen?style=for-the-badge&logo=fishshell&logoColor=white)](https://fishshell.com/)
-[![Starship](https://img.shields.io/badge/Prompt-Starship-orange?style=for-the-badge&logo=starship&logoColor=white)](https://starship.rs/)
+[![WSL2](https://img.shields.io/badge/WSL%20(Debian)-A81D33?style=for-the-badge&logo=debian&logoColor=white)](https://learn.microsoft.com/en-us/windows/wsl/)
+[![Neovim](https://img.shields.io/badge/Neovim-57A143?style=for-the-badge&logo=neovim&logoColor=white)](https://neovim.io/)
+[![Fish](https://img.shields.io/badge/Fish%20Shell-34C534?style=for-the-badge&logo=fishshell&logoColor=white)](https://fishshell.com/)
 
-My personal development environment for WSL2(Debian), centered around Fish and curated set of CLI tools.
+My personal development environment in WSL using selected CLI tools.
 
-## What's included
+## Folder Structure
 
-| Config     | Tool                              |
-|:-----------|:----------------------------------|
-|`fish/`     | Fish shell + abbreviations        |
-|`yazi/`     | Terminal file manager             |
-|`git/`      | *.gitconfig* with GitHub CLI auth |
-|`wsl/`      | *wsl.conf* for WSL2 settings      |
-|`starship/` | Shell prompt                      |
-|`scripts/`  | Setup, verify and update scripts  |
+```
+dotfiles/
+├── fish/           # Fish shell configurations + abbreviations
+├── git/            # Git configuration with GitHub CLI auth
+├── lazygit/        # Lazygit custom scripts and configuration
+├── micro/          # Micro keybindings, configuration, and colorschemes
+├── nvim/           # Neovim options, keymaps, and custom plugins
+├── starship/       # Shell custom prompt
+├── wsl/            # WSL personal settings
+└── yazi/           # Terminal file manager keymaps and configuration
+```
 
-## CLI Tools installed
-
-| Tool                           | Description                                  |
-|:-------------------------------|:---------------------------------------------|
-|**fish**                        | Shell                                        |
-|**yazi**                        | File manager                                 |
-|**starship**                    | Shell prompt                                 |
-|**eza**                         | Modern `ls` replacement                      |
-|**bat**                         | Modern `cat` + syntax highlighting           |
-|**fd**                          | Fast `find` replacement                      |
-|**fzf**                         | Fuzzy finder                                 |
-|**ripgrep**                     | Fast `grep` replacement                      |
-|**zoxide**                      | Smart `cd` replacement                       |
-|**lazygit**                     | TUI for Git                                  |
-|**glow**                        | Markdown viewer in terminal                  |
-|**gh**                          | GitHub CLI                                   |
-|**micro**                       | Simple terminal editor                       |
-|**node@24** + **pnpm**          | JavaScript runtime + package manager         |
-|**sevenzip**                    | Tool for compressing/decompressing files     |
-|**go**, **openjdk**, **python** | Set of frequently used language technologies |
-
-## Install
+## Installation
 
 ### Prerequisites
-- WSL2 with Debian
-- Git available
+
+- WSL2 (Debian Distro)
+- Git installed
+
+
+> [!NOTE]
+> For more information on what the `setup` script will execute, see the [Terminal Tools Included](#terminal-tools-included) section.
 
 ### Steps
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/JacobEscoto/dotfiles ~/dotfiles
+git clone git@github.com:JacobEscoto/dotfiles.git ~/dotfiles
 
-# 2. Run setup
+# 2. Change directory to dotfiles and run setup script
 cd ~/dotfiles
 bash scripts/setup.sh
 
 # 3. Restart WSL (from PowerShell)
 wsl --shutdown
 
-# 4. Reopen WSL and authenticate GitHub
+# 4. Reopen WSL and authenticate with GitHub
 gh auth login
 ```
 
-## Verify the setup
+## Terminal Tools Included
 
-```bash
-bash ~/dotfiles/scripts/verify.sh
-```
-Checks that all tools are installed, symlinks exist, and GitHub auth is active.
+### Shell foundations
 
-## Update everything
+- [Fish Shell](https://fishshell.com/)
+- [Starship](https://starship.rs)
+- [Zoxide](https://crates.io/crates/zoxide)
 
-```bash
-bash ~/dotfiles/scripts/update.sh
-```
-Updates Homebrew packages, Fish plugins, and pnpm in one command.
+### File management and exploration
+
+- [eza](https://eza.rocks/)
+- [fd](https://github.com/sharkdp/fd)
+- [yazi](https://yazi-rs.github.io/)
+- [fzf](https://junegunn.github.io/fzf/)
+- [sevenzip](https://7-zip.org/)
+
+### Text processing and visualization
+
+- [bat](https://github.com/sharkdp/bat)
+- [ripgrep](https://github.com/burntsushi/ripgrep)
+- [glow](https://github.com/charmbracelet/glow)
+
+### Code development and version control
+
+- [Neovim](https://neovim.io/)
+- [Micro](https://micro-editor.github.io/)
+- [Lazygit](https://github.com/jesseduffield/lazygit)
+- [gh](https://cli.github.com/)
+- [Node.js](https://nodejs.org/en)
+- [pnpm](https://pnpm.io/installation)
+- [Go](https://go.dev/)
+- [Python](https://www.python.org/)
+
+### Extras
+
+- [Gum: glamorous shell scripts](https://github.com/charmbracelet/gum)
+
+## Neovim configuration
+
+For a complete list of plugins, LSP settings, and custom keybindings, please check out the [Neovim configuration documentation](nvim/README.md)
+
+## Scripts
+
+- [setup.sh](scripts/setup.sh): Installs and configures the development environment within the terminal.
+- [clean.sh](scripts/clean.sh): Removes and cleans user cache, logs, old packages, and swap files.
+- [project.sh](scripts/project.sh): Fast project picker for Neovim/VS Code.
+
