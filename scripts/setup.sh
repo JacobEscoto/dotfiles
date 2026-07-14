@@ -58,12 +58,16 @@ gum style \
 
 mkdir -p ~/.config
 
+# For folders delete first, then link
+rm -rf ~/.config/fish
 ln -sfv "$DOTFILES_DIR/fish" ~/.config/fish
-ln -sfv "$DOTFILES_DIR/starship/starship.toml" ~/.config/starship.toml
-ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~/.gitconfig
+
+rm -rf ~/.config/nvim
 ln -sfv "$DOTFILES_DIR/nvim" ~/.config/nvim
 
-clear
+ln -sfv "$DOTFILES_DIR/starship/starship.toml" ~/.config/starship.toml
+ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~/.gitconfig
+
 echo ""
 
 # Homebrew
@@ -85,7 +89,6 @@ else
     "⦿ Homebrew already installed, SKIPPING..."
 fi
 
-clear
 echo ""
 
 # Packages installation via Homebrew
