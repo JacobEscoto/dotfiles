@@ -1,0 +1,6 @@
+customCommands:
+  - key: 'C'
+    context: 'files'
+    description: 'Interactive commit with gum'
+    command: 'bash ~/.config/lazygit/scripts/gm-commit.sh'
+    output: terminal

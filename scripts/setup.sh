@@ -65,8 +65,21 @@ ln -sfv "$DOTFILES_DIR/fish" ~/.config/fish
 rm -rf ~/.config/nvim
 ln -sfv "$DOTFILES_DIR/nvim" ~/.config/nvim
 
+rm -rf ~/.config/lazygit
+ln -sfv "$DOTFILES_DIR/lazygit" ~/.config/lazygit
+chmod +x ~/.config/lazygit/scripts/gm-commit.sh
+
 ln -sfv "$DOTFILES_DIR/starship/starship.toml" ~/.config/starship.toml
 ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~/.gitconfig
+
+mkdir -p ~/.local/bin
+
+# Link script files to user binaries
+ln -sfv "$DOTFILES_DIR/scripts/project.sh" ~/.local/bin/project
+chmod +x ~/.local/bin/project
+
+ln -sfv "$DOTFILES_DIR/scripts/clean.sh" ~/.local/bin/clean
+chmod +x ~/.local/bin/clean
 
 echo ""
 
