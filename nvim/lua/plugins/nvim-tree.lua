@@ -14,7 +14,7 @@ return {
           width = 30,
         },
         filters = {
-          dotfiles = true,
+          dotfiles = false,
         },
       })
     end,

@@ -7,9 +7,13 @@ return {
     opts = {
       bigfile = { enabled = true },
       indent = {
-        priority = 1,
         enabled = true,
-        char = "│",
+        indent = {
+          char = "¦",
+        },
+        scope = {
+          char = "¦",
+        },
       },
       input = { enabled = true },
       notifier = {
