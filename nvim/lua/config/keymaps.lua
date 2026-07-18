@@ -4,6 +4,9 @@ vim.keymap.set("i", "<C-s>", "<Esc><cmd>w<cr>", { desc = "Save file (insert mode
 vim.keymap.set("v", "<C-s>", "<Esc><cmd>w<cr>", { desc = "Save file (visual mode)" })
 vim.keymap.set("n", "<C-a>", "ggVG", { desc = "Select all (normal mode)" })
 
+-- Maps 'Enter' in normal mode to break the line at the cursor
+vim.keymap.set("n", "<CR>", "i<cr><Esc>", { desc = "Insert line break at cursor" })
+
 -- Explorer
 vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle file explorer" })
 

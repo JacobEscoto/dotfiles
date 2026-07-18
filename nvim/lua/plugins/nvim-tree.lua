@@ -13,8 +13,33 @@ return {
           side = "right",
           width = 30,
         },
+        git = {
+          enable = true,
+        },
+        renderer = {
+          icons = {
+            git_placement = "before",
+            glyphs = {
+              git = {
+                unstaged = "",
+                staged = "",
+                unmerged = "",
+                renamed = "",
+                untracked = "",
+                deleted = "",
+                ignored = "",
+              },
+            },
+          },
+        },
         filters = {
+          -- Show all dotfiles, except .git and node_modules directories
           dotfiles = false,
+
+          custom = {
+            "^\\.git$",
+            "^node_modules$",
+          },
         },
       })
     end,
