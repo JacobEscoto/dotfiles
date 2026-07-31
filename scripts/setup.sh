@@ -151,24 +151,7 @@ else
     "⦿ Fish already set as default shell, SKIPPING..."
 fi
 
-# WSL configuration
-if gum confirm "Do you want to apply a custom WSL configuration?"; then
-  sudo cp "$DOTFILES_DIR/wsl/wsl.conf" /etc/wsl.conf
-  gum style \
-    --foreground "$SUCCESS_COLOR" --border "none" --align "left" \
-    "⦿ WSL Configuration copied." "Restart WSL by running 'wsl --shutdown' from Powershell to apply changes."
-else
-  gum style \
-    --foreground "$WARN_COLOR" --border "none" --align "left" \
-    "[WARNING] WSL configuration skipped."
-fi
-
 echo ""
 gum style --foreground "$SUCCESS_COLOR" --border "none" \
   --align "left" "⦿ Setup Complete!"
-echo ""
-
-gum style --foreground "$INFO_COLOR" --border "none" \
-  --align "left" "Next steps:" "  1. Run 'wsl --shutdown' from Powershell" \
-  "  2. Reopen WSL" "  3. Run 'gh auth login' to activate GitHub credentials"
 echo ""

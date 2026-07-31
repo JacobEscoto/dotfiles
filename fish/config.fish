@@ -15,9 +15,6 @@ abbr -a treell "eza --icons=always --tree --long --header --git --ignore-glob='n
 abbr -a lsd "eza --icons=always --only-dirs"
 abbr -a lsf "eza --icons=always --only-files"
 
-# Abbreviation for LazyGit
-abbr -a lg lazygit
-
 # Environment Configuration
 if test -d /home/linuxbrew/.linuxbrew
     /home/linuxbrew/.linuxbrew/bin/brew shellenv | source
@@ -50,8 +47,9 @@ set -g fish_color_selection --background=151e3d
 set -g fish_color_operator 0492c2
 set -g fish_color_escape cba6f7
 
-# Ensures to add `.local/bin` to the fish path
+# Ensures to add `.local/bin` and `linuxbrew/bin` to the fish path
 fish_add_path ~/.local/bin
+fish_add_path /home/linuxbrew/.linuxbrew/bin
 
 # Initialize Zoxide
 zoxide init fish | source
