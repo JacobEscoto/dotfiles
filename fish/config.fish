@@ -26,10 +26,10 @@ if not set -q SSH_AUTH_SOCK
   ssh-add ~/.ssh/id_22519 2> /dev/null
 end
 
-#
+# Enable true color for Micro Editor
 set -gx MICRO_TRUECOLOR 1
 
-#
+# Add local binaries and go binaries to PATH
 set -gx PATH "$HOME/.local/bin" "$HOME/go/bin" $PATH
 
 # Syntax Colors
