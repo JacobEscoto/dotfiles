@@ -29,9 +29,10 @@ format = "[ $path ]($style)"
 truncation_length = 0
 
 [directory.substitutions]
+"~/Desktop" = " "
 "~/Pictures" = " "
 "~/Documents" = "󰈙 "
-"~/Downloads" = " "
+"~/Downloads" = " "
 "~/Music" = " "
 "~/Videos" = " "
 
