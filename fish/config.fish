@@ -56,3 +56,4 @@ zoxide init fish | source
 
 # Initialize Starship
 starship init fish | source
+
