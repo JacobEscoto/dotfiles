@@ -1,22 +1,21 @@
 # Dotfiles - JacobEscoto
 
-[![WSL2](https://img.shields.io/badge/WSL%20(Debian)-A81D33?style=for-the-badge&logo=debian&logoColor=white)](https://learn.microsoft.com/en-us/windows/wsl/)
+[![Linux (Debian)](https://img.shields.io/badge/Debian-A81D33?style=for-the-badge&logo=debian&logoColor=white)](https://www.debian.org/)
 [![Neovim](https://img.shields.io/badge/Neovim-57A143?style=for-the-badge&logo=neovim&logoColor=white)](https://neovim.io/)
 [![Fish](https://img.shields.io/badge/Fish%20Shell-34C534?style=for-the-badge&logo=fishshell&logoColor=white)](https://fishshell.com/)
 
-My personal development environment in WSL using selected CLI tools.
+My personal development environment in **Debian 13** using selected CLI tools.
 
 ## Folder Structure
 
 ```
 dotfiles/
-├── fish/           # Fish shell configurations + abbreviations
+├── fish/           # Fish shell configuration + abbreviations
 ├── git/            # Git configuration with GitHub CLI auth
-├── lazygit/        # Lazygit custom scripts and configuration
 ├── micro/          # Micro keybindings, configuration, and colorschemes
 ├── nvim/           # Neovim options, keymaps, and custom plugins
 ├── starship/       # Shell custom prompt
-├── wsl/            # WSL personal settings
+├── kitty/          # Kitty terminal configuration
 └── yazi/           # Terminal file manager keymaps and configuration
 ```
 
@@ -24,7 +23,7 @@ dotfiles/
 
 ### Prerequisites
 
-- WSL2 (Debian Distro)
+- Linux (Debian 13)
 - Git installed
 
 
@@ -41,10 +40,7 @@ git clone git@github.com:JacobEscoto/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 bash scripts/setup.sh
 
-# 3. Restart WSL (from PowerShell)
-wsl --shutdown
-
-# 4. Reopen WSL and authenticate with GitHub
+# 3. Authenticate with GitHub
 gh auth login
 ```
 
@@ -92,6 +88,4 @@ For a complete list of plugins, LSP settings, and custom keybindings, please che
 ## Scripts
 
 - [setup.sh](scripts/setup.sh): Installs and configures the development environment within the terminal.
-- [clean.sh](scripts/clean.sh): Removes and cleans user cache, logs, old packages, and swap files.
-- [project.sh](scripts/project.sh): Fast project picker for Neovim/VS Code.
 
