@@ -1,0 +1,60 @@
+@import "colors.rasi"
+
+* {
+  background-color: @bg;
+  text-color:       @fg;
+  font:             "JetBrains Mono Nerd Font 12";
+}
+
+window {
+  width:            250px;
+  padding:          15px;
+  border:           1px;
+  border-radius:    6px;
+  border-color:     @bga;
+  location:         center;
+  y-offset:         -2em;
+  children:         [ "mainbox" ];
+}
+
+mainbox {
+  background-color: transparent;
+  children:         [ "prompt", "listview" ];
+}
+
+prompt {
+  background-color: transparent;
+  font:             "Fira Code Bold 10";
+  text-color:       @fg;
+  margin:           0px 0px 10px 0px;
+  horizontal-align: 0.5;
+}
+
+listview {
+  background-color: transparent;
+  lines:            1;
+  columns:          2;
+  spacing:          10px;
+  cycle:            true;
+  dynamic:          true;
+}
+
+element {
+  background-color: @bga;
+  text-color:       @fg;
+  padding:          8px;
+  border-radius:    4px;
+  horizontal-align: 0.5;
+}
+
+element selected {
+  background-color: @ac;
+  text-color:       @bg;
+}
+
+element-text {
+  background-color: transparent;
+  text-color:       inherit;
+  font:             "Fira Code 18";
+  horizontal-align: 0.5;
+}
