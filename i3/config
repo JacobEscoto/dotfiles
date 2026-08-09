@@ -1,85 +1,112 @@
+# ========================================================
+#  SETTINGS
+# ========================================================
 set $mod Mod4
-
 set $terminal kitty
-set $launcher rofi -show drun
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
+# Font for window titles
 font pango:Fira Code 10
 
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+# Window borders
+for_window [class="^.*"] border pixel 2
+
+# Gaps
+gaps inner 2
+gaps outer 2
+smart_gaps on
+smart_borders on
+
+# ========================================================
+#  STARTUP
+# ========================================================
+# Enable touchpad tapping
+exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+
+# Run commands for desktop personalization (Workspaces, polybar, wallpaper and picom).
 exec --no-startup-id i3-msg 'workspace 1:web; workspace 2:code; workspace 3:files; workspace 1:web'
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-scale ~/Pictures/debian-wallpaper-simple.png
 exec_always --no-startup-id picom -b
 
+# ========================================================
+#  KEYBINDINGS
+# ========================================================
+
+# Volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 2%+
 bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-
 bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id wpctl set-source-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
+# Brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
+# App launcher
 bindsym $mod+space exec --no-startup-id ~/.config/rofi/scripts/launcher.sh
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+# File manager
+bindsym $mod+e exec --no-startup-id thunar
 
-# move tiling windows via drag & drop by left-clicking into the title bar,
-# or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
-
-# start a terminal
+# Terminal
 bindsym $mod+Return exec $terminal
 
-# kill focused window
+# Kill window
 bindsym $mod+Shift+q kill
 
-# change focus
+# Floating modifier
+floating_modifier $mod
+
+# Change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
+# Change focus (arrow keys as alternative)
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
+# Move windows
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# alternatively, you can use the cursor keys:
+# Move windows (arrow keys as alternative)
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+alt+h split h
+# Split horizontal and vertical
+bindsym $mod+minus split h
+bindsym $mod+backslash split v
 
-# split in vertical orientation
-bindsym $mod+alt+v split v
-
-# enter fullscreen mode for the focused container
+# Fullscreen mode
 bindsym $mod+f fullscreen toggle
 
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
+# Reload configuration
+bindsym $mod+Shift+c reload
+
+# Restart i3
+bindsym $mod+Shift+r restart
+
+# ========================================================
+#  WORKSPACES
+# ========================================================
 set $ws1 "1:web"
 set $ws2 "2:code"
 set $ws3 "3:files"
-set $ws4 "4"
+set $ws4 "4:docs"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 
-# switch to workspace
+# Switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
@@ -89,31 +116,28 @@ bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+# Move window to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1; workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2; workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3; workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4; workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5; workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6; workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7; workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8; workspace number $ws8
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec i3-msg exit 
+# Cycle workspaces
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
 
-for_window [class="^.*"] border pixel 2
+# ========================================================
+#  COLORS
+# ========================================================
 
-gaps inner 4
-
-
-# Custom colors
-
-client.focused #4DD07E #4DD07E #DCE0E5 #4DD07E #4DD07E
-
+# class                   border      background    text      indicator   child_border
+client.focused            #4DD07E     #4DD07E       #DCE0E5   #4DD07E     #4DD07E
+client.focused_inactive   #2D5A3D     #1E3A24       #A0A8B0   #2D5A3D     #2D5A3D
+client.unfocused          #404040     #2B2B2B       #888888   #404040     #404040
+client.urgent             #E74C3C     #C0392B       #ECF0F1   #E74C3C     #E74C3C
+client.placeholder        #34495E     #2C3E50       #7F8C8D   #34495E     #34495E
+client.background         #1A1A1A     #1A1A1A       #FFFFFF   #1A1A1A     #1A1A1A
