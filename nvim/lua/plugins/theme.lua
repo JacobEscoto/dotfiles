@@ -1,23 +1,23 @@
 return {
   {
-    "projekt0n/github-nvim-theme",
-    name = "github-theme",
+    "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-      require("github-theme").setup({
-        options = {
-          styles = {
-            comments = "italic",
-            keywords = "bold",
-            types = "italic,bold",
-          },
-          hide_end_of_buffer = true,
-          transparent = false,
-          terminal_colors = true,
-        },
+      require("kanagawa").setup({
+        compile = false,
+        undercurl = true,
+        commentStyle = { italic = true },
+        functionStyle = {},
+        keywordStyle = { italic = true },
+        statementStyle = { bold = true },
+        typeStyle = {},
+        transparent = false,
+        dimInactive = false,
+        terminalColors = true,
+        theme = "dragon",
       })
-      vim.cmd("colorscheme github_dark")
+      vim.cmd("colorscheme kanagawa")
     end,
   },
 }
