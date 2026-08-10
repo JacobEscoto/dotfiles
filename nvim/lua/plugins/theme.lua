@@ -15,7 +15,7 @@ return {
         transparent = false,
         dimInactive = false,
         terminalColors = true,
-        theme = "dragon",
+        theme = "wave",
       })
       vim.cmd("colorscheme kanagawa")
     end,

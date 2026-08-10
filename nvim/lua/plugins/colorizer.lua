@@ -1,7 +1,5 @@
 return {
-  {
-    "catgoose/nvim-colorizer.lua",
-    event = "BufReadPre",
-    opts = {},
-  },
+  "catgoose/nvim-colorizer.lua",
+  event = "BufReadPre",
+  opts = {},
 }
