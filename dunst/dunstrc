@@ -1,0 +1,64 @@
+[global]
+  monitor       = 0
+  follow        = mouse
+  transparency  = 0
+
+  # Position and padding
+  width              = (0, 430)
+  height             = (0, 300)
+  origin             = top-right
+  offset             = (10, 40)
+  padding            = 14
+  horizontal_padding = 16
+  text_icon_padding  = 10
+
+  # Border
+  frame_width   = 1
+  frame_color   = "#4DD07E"
+
+  # Separator
+  separator_height = 1
+  separator_color  = "#3F5360"
+
+  # Radius
+  corner_radius = 4
+
+  # Font
+  font = JetBrains Mono 10
+
+  # Text format
+  markup    = full
+  format    = "<b>%s</b>\n%b"
+  alignment = left
+
+  # Actions
+  sort                 = yes
+  stack_duplicates     = true
+  hide_duplicate_count = false
+  show_age_threshold   = 60
+  ellipsize            = middle
+
+  # Icons
+  icon_position = left
+  min_icon_size = 24
+  max_icon_size = 32
+
+  # Mouse actions
+  mouse_left_click   = close_current
+  mouse_middle_click = do_action
+  mouse_right_click  = close_all
+
+[urgency_low]
+  background = "#212B30"
+  foreground = "#6D8895"
+  timeout    = 4
+
+[urgency_normal]
+  background = "#212B30"
+  foreground = "#C4C7C5"
+  timeout    = 5
+
+[urgency_critical]
+  background = "#212B30"
+  foreground = "#EC7875"
+  timeout    = 0
