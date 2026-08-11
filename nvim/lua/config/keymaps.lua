@@ -2,6 +2,8 @@
 vim.keymap.set("n", "<C-s>", "<cmd>w<cr>", { desc = "Save file (normal mode)" })
 vim.keymap.set("i", "<C-s>", "<Esc><cmd>w<cr>", { desc = "Save file (insert mode)" })
 vim.keymap.set("v", "<C-s>", "<Esc><cmd>w<cr>", { desc = "Save file (visual mode)" })
+
+-- Select all the text (normal mode)
 vim.keymap.set("n", "<C-a>", "ggVG", { desc = "Select all (normal mode)" })
 
 -- Maps 'Enter' in normal mode to break the line at the cursor
@@ -42,6 +44,12 @@ end, { desc = "Search Buffers" })
 vim.keymap.set("n", "<leader>N", function()
   Snacks.notifier.show_history()
 end, { desc = "Notifications" })
+
+-- Lazy dashbard
+vim.keymap.set("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Open Lazy" })
+
+-- Mason
+vim.keymap.set("n", "<leader>cm", "<cmd>Mason<cr>", { desc = "Open Mason" })
 
 -- Help
 vim.keymap.set("n", "<leader>?", function()
