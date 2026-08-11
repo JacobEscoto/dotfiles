@@ -21,7 +21,7 @@ vim.lsp.config("gopls", {
 })
 
 vim.lsp.config("lua-language-server", {
-  cmd = { os.getenv("HOME") .. "/.local/bin/lua-language-server/bin/lua-language-server" },
+  cmd = { "lua-language-server" },
   filetypes = { "lua" },
   root_markers = { ".luarc.json", ".luarc.jsonc", "selene.toml", "stylua.toml" },
   settings = {
