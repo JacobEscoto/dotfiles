@@ -102,6 +102,9 @@ bindsym $mod+Shift+c reload
 # Restart i3
 bindsym $mod+Shift+r restart
 
+# Lock screen
+bindsym $mod+Mod1+b exec --no-startup-id ~/.config/i3/scripts/lock.sh
+
 # ========================================================
 #  WORKSPACES
 # ========================================================
