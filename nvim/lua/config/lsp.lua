@@ -1,7 +1,28 @@
 -- Native LSP Configuration
--- Supports: Go, Lua, Bash
+-- Supports: Go, Lua, Bash, Astro, Typescript
 
 local lsp_config = {}
+
+local mason_sdk = vim.fn.stdpath("data") .. "/mason/packages/typescript-language-server/node_modules/typescript/lib"
+
+-- LSP for TypeScript and JavaScript
+vim.lsp.config("typescript-language-server", {
+  cmd = { "typescript-language-server", "--stdio" },
+  filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+  root_markers = { "tsconfig.json", "package.json", "jsconfig.json", ".git" },
+})
+
+-- LSP for Astro
+vim.lsp.config("astro-language-server", {
+  cmd = { "astro-ls", "--stdio" },
+  filetypes = { "astro" },
+  root_markers = { "package.json", "astro.config.mjs", "astro.config.ts", ".git" },
+  init_options = {
+    typescript = {
+      tsdk = mason_sdk,
+    },
+  },
+})
 
 vim.lsp.config("gopls", {
   cmd = { "gopls" },
@@ -56,7 +77,13 @@ vim.lsp.config("bash-language-server", {
   },
 })
 
-vim.lsp.enable({ "gopls", "lua-language-server", "bash-language-server" })
+vim.lsp.enable({
+  "gopls",
+  "lua-language-server",
+  "bash-language-server",
+  "typescript-language-server",
+  "astro-language-server",
+})
 
 vim.diagnostic.config({
   virtual_text = {

@@ -51,7 +51,7 @@ return {
       end
 
       vim.ui.select(choices, {
-        prompt = "Restore Session: ",
+        prompt = " Restore Session",
       }, function(choice)
         if choice then
           require("persisted").load({ session = session_map[choice] })
