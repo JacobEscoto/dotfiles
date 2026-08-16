@@ -54,7 +54,10 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 bindsym $mod+space exec --no-startup-id ~/.config/rofi/scripts/launcher.sh
 
 # File manager
-bindsym $mod+e exec --no-startup-id thunar
+bindsym $mod+e exec --no-startup-id kitty -- spf
+
+# Task manager
+bindsym Control+Shift+Escape exec --no-startup-id kitty -- btop
 
 # Terminal
 bindsym $mod+Return exec $terminal
