@@ -36,28 +36,53 @@ case $chosen in
   fi
   ;;
 "$lock")
-  if [[ -x /usr/bin/i3lock ]]; then
-    i3lock
-  elif [[ -x /usr/bin/betterlockscreen ]]; then
-    betterlockscreen -l
-  elif [[ -x /usr/bin/xflock4 ]]; then
-    xflock4
+  if command -v betterlockscreen &>/dev/null; then
+    betterlockscreen -l || notify-send normal "Lock Error" "betterlockscreen failed"
+  elif command -v i3lock &>/dev/null; then
+    i3lock -c 000000 || notify-send normal "Lock error" "i3lock failed"
+  elif command -v loginctl &>/dev/null && loginctl session-status &>/dev/null; then
+    loginctl lock-session
+  elif command -v xlock &>/dev/null; then
+    xlock
+  else
+    notify-send normal "Lock Error" "Unable to lock your screen. Please try again or install any lock screen manager"
   fi
   ;;
 "$logout")
   if [[ "$(confirm)" == "$YES" ]]; then
-    if [[ -x /usr/bin/xfce4-session-logout ]]; then
+    wm="${DESKTOP_SESSION:-$XDG_CURRENT_DESKTOP}"
+    display="${DISPLAY:-:0}"
+
+    if [[ "$wm" == *"i3"* ]]; then
+      i3-msg exit
+    elif [[ "$wm" == *"sway"* ]] || command -v swaymsg &>/dev/null && swaymsg -t get_version &>/dev/null; then
+      swaymsg exit
+    elif [[ "$wm" == *"hyprland"* ]] || [[ "$HYPRLAND_CMD_SOCK" != "" ]]; then
+      hyprctl dispatch exit 0
+    elif [[ "$wm" == *"bspwm"* ]] || command -v bspc &>/dev/null; then
+      bspc quit
+    elif [[ "$wm" == *"openbox"* ]]; then
+      openbox --exit
+    elif [[ "$wm" == *"dwm"* ]] || pgrep -x dwm &>/dev/null; then
+      pkill -15 dwm
+    elif [[ "$wm" == *"xfce"* ]] || command -v xfce4-session-logout &>/dev/null; then
       xfce4-session-logout --logout
+    elif [[ "$wm" == *"gnome"* ]] || command -v gnome-shell &>/dev/null; then
+      gnome-session-quit --logout
+    elif [[ "$wm" == *"plasmawayland"* ]] || [[ "$wm" == *"plasmashell"* ]] || command -v kquitapp6 &>/dev/null; then
+      kquitapp6 plasmashell
+    elif command -v loginctl &>/dev/null; then
+      loginctl terminate-user "$USER"
+    elif [[ -n "$display" ]]; then
+      kill -9 -1
+    else
+      notify-send normal "Logout Error" "Unable to determine WM: $wm"
     fi
   fi
   ;;
 "$suspend")
   if [[ "$(confirm)" == "$YES" ]]; then
-    if [[ -x /usr/bin/xfce4-session-logout ]]; then
-      xfce4-session-logout --suspend
-    else
-      systemctl suspend
-    fi
+    systemctl suspend
   fi
   ;;
 esac
