@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"runtime"
 	"strings"
@@ -16,7 +17,9 @@ type SystemInfo struct {
 	ID        string
 	Version   string
 	IsWSL     bool
+	HasBrew   bool
 	UserShell string
+	HomeDir   string
 }
 
 // DetectSystemInfo searchs for the OS name.
@@ -24,6 +27,7 @@ func DetectSystemInfo() (SystemInfo, error) {
 	info := SystemInfo{
 		OS:        "unknown",
 		UserShell: getUserShell(),
+		HomeDir:   os.Getenv("HOME"),
 	}
 
 	switch runtime.GOOS {
@@ -42,6 +46,8 @@ func DetectSystemInfo() (SystemInfo, error) {
 		info.OSName = "macOS"
 		info.ID = "darwin"
 	}
+
+	info.HasBrew = checkBrew()
 
 	return info, nil
 }
@@ -91,6 +97,11 @@ func checkWSL() bool {
 	}
 	content := strings.ToLower(string(data))
 	return strings.Contains(content, "microsoft") || strings.Contains(content, "wsl")
+}
+
+func checkBrew() bool {
+	_, err := exec.LookPath("brew")
+	return err == nil
 }
 
 func getUserShell() string {
