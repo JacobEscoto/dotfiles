@@ -1,0 +1,98 @@
+#-- File Editor
+editor = ""
+
+#-- Directory Editor
+dir_editor = ""
+
+#-- Automatically check for updates
+auto_check_update = true
+
+cd_on_quit = false
+debug = false
+
+#-- Theme
+theme = ""
+
+#-- Code Previewer
+code_previewer = ""
+
+#-- File and Image preview
+default_open_file_preview = true
+show_image_preview = true
+
+#-- Info Footer
+show_panel_footer_info = true
+
+#-- Default Directory
+default_directory = "." 
+
+#-- File Size Units
+file_size_use_si = true
+
+#-- Default Sort Type
+# 0: By name, 1: By size, 2: By date modified, 3: By type, 4: Natural
+default_sort_type = 0
+
+#-- Sort Order Reversing (true: Descending, false: Ascending)
+sort_order_reversed = false
+
+#-- Case-Sensitive Sorting
+case_sensitive_sort = false
+
+#-- Exit Shell on Success
+shell_close_on_success = false
+
+#-- Page Scroll Size
+page_scroll_size = 0
+
+#-- Ignore Missing Fields
+ignore_missing_fields = false
+
+#-- File Panel Extra Columns Count
+file_panel_extra_columns = 0
+
+#-- Filename Width
+file_panel_name_percent = 60
+
+
+#-- Nerd Font Support
+nerdfont = true
+show_select_icons = true
+
+#-- Transparent background
+transparent_background = true
+
+#-- File Preview Panel Width and Border
+file_preview_width = 0
+enable_file_preview_border = false
+
+#-- Sidebar Width
+sidebar_width = 20
+
+#-- Sidebar Sections
+sidebar_sections = ["home", "pinned", "disks"]
+
+#-- Border
+border_top = '─'
+border_bottom = '─'
+border_left = '│'
+border_right = '│'
+border_top_left = '╭'
+border_top_right = '╮'
+border_bottom_left = '╰'
+border_bottom_right = '╯'
+border_middle_left = '├'
+border_middle_right = '┤'
+
+#-- Detailed Metadata
+metadata = false
+
+#-- MD5 Checksum Generation
+enable_md5_checksum = false
+
+#-- Zoxide Support
+zoxide_support = true 
+
+[open_with]
+conf = "nvim"
+toml = "micro"
