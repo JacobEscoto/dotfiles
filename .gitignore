@@ -1,6 +1,17 @@
+*.bak
+.env*
+
 # Fish
 fish/fish_variables
+fish/conf.d
+fish/completions
+fish/functions
 
 # Micro
 micro/buffers/
 micro/backups/
+
+
+# Vim
+lazy-lock.json
+
