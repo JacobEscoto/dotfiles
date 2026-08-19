@@ -1,0 +1,89 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+      "type": "auto",
+      "source": "/home/djacoz/.config/fastfetch/kanagawa-wave.png",
+      "width": 30,
+      "height": 18,
+      "padding": {
+        "top": 1,
+        "left": 1,
+        "right": 3
+      }
+    },
+    "display": {
+      "separator": ": "
+    },
+    "modules": [
+      "break",
+      "break",
+      "break",
+      "break",
+      {
+        "type": "title",
+        "key": "{#94} User{#}",
+        "format": "{user-name}"
+      },
+      {
+        "type": "datetime",
+        "key": "{#94} Datetime{#}",
+        "format": "{year}-{month-pretty}-{day-in-month} {hour-pretty}:{minute-pretty}:{second-pretty}"
+      },
+      {
+        "type": "host",
+        "key": "{#94}󰪫 Machine{#}",
+        "format": "{name} {version}"
+      },
+      {
+        "type": "custom",
+        "format": "{#90}──────────────────────────────────────────────────────────{#}"
+      },
+      {
+        "type": "os",
+        "key": "{#94} OS{#}",
+        "format": "{?pretty-name}{pretty-name}{#90}{?}{/pretty-name}{name}{/} {codename} [v{version}] [{arch}]"
+      },
+      {
+        "type": "kernel",
+        "key": "{#94}󰒋 Kernel{#}",
+        "format": "{sysname} {#90}[v{release}]"
+      },
+      {
+        "type": "uptime",
+        "key": "{#94}󰚰 Uptime{#}",
+        "format": "{?days}{days} Days + {?}{hours}:{minutes}:{seconds}"
+      },
+      {
+        "type": "custom",
+        "format": "{#90}──────────────────────────────────────────────────────────{#}"
+      },
+      {
+        "type": "cpu",
+        "key": "{#94} CPU{#}",
+        "showPeCoreCount": true,
+        "format": "{name} {#90}[C:{core-types}] [{freq-max}]"
+      },
+      {
+        "type": "gpu",
+        "key": "{#94}󰢮 GPU{#}",
+        "detectionMethod": "auto",
+        "driverSpecific": true,
+        "format": "{name} {#90}[C:{core-count}]{?frequency} [{frequency}]{?} [{type}]"
+      },
+      {
+        "type": "memory",
+        "key": "{#94} Memory{#}",
+        "format": "{used} / {total} ({percentage})"
+      },
+      {
+        "type": "disk",
+        "key": "{#94} Disk{#}",
+        "format": "{size-used} / {size-total}"
+      },
+      "break",
+      {
+        "type": "custom",
+        "format": "\u001b[38;2;215;18;50m■\u001b[0m \u001b[38;2;2;6;40m■\u001b[0m \u001b[38;2;32;36;69m■\u001b[0m \u001b[38;2;143;147;173m■\u001b[0m \u001b[38;2;79;83;115m■\u001b[0m \u001b[38;2;7;7;40m■\u001b[0m"
+      }
+    ]
+  }
