@@ -1,91 +1,25 @@
-# Dotfiles - JacobEscoto
+# Jacob's dotfiles
 
-[![Linux (Debian)](https://img.shields.io/badge/Debian-A81D33?style=for-the-badge&logo=debian&logoColor=white)](https://www.debian.org/)
-[![Neovim](https://img.shields.io/badge/Neovim-57A143?style=for-the-badge&logo=neovim&logoColor=white)](https://neovim.io/)
-[![Fish](https://img.shields.io/badge/Fish%20Shell-34C534?style=for-the-badge&logo=fishshell&logoColor=white)](https://fishshell.com/)
+My personal workflow configuration and customization for **Debian/GNU Linux**.
 
-My personal development environment in **Debian 13** using selected CLI tools.
+## Contents
 
-## Folder Structure
+### System and window management
+- i3 + picom configuration
+- betterlockscreen configuration
+- dunst configuration
+- polybar + rofi configuration
 
-```
-dotfiles/
-├── fish/           # Fish shell configuration + abbreviations
-├── git/            # Git configuration with GitHub CLI auth
-├── micro/          # Micro keybindings, configuration, and colorschemes
-├── nvim/           # Neovim options, keymaps, and custom plugins
-├── starship/       # Shell custom prompt
-├── kitty/          # Kitty terminal configuration
-└── yazi/           # Terminal file manager keymaps and configuration
-```
-
-## Installation
-
-### Prerequisites
-
-- Linux (Debian 13)
-- Git installed
-
-
-> [!NOTE]
-> For more information on what the `setup` script will execute, see the [Terminal Tools Included](#terminal-tools-included) section.
-
-### Steps
-
-```bash
-# 1. Clone the repository
-git clone git@github.com:JacobEscoto/dotfiles.git ~/dotfiles
-
-# 2. Change directory to dotfiles and run setup script
-cd ~/dotfiles
-bash scripts/setup.sh
-
-# 3. Authenticate with GitHub
-gh auth login
-```
-
-## Terminal Tools Included
-
-### Shell foundations
-
-- [Fish Shell](https://fishshell.com/)
-- [Starship](https://starship.rs)
-- [Zoxide](https://crates.io/crates/zoxide)
+### Terminal and shell environment
+- Kitty configuration
+- Fish configuration
+- Starship prompt configuration
 
 ### File management and exploration
-
-- [eza](https://eza.rocks/)
-- [fd](https://github.com/sharkdp/fd)
-- [yazi](https://yazi-rs.github.io/)
-- [fzf](https://junegunn.github.io/fzf/)
-- [sevenzip](https://7-zip.org/)
-
-### Text processing and visualization
-
-- [bat](https://github.com/sharkdp/bat)
-- [ripgrep](https://github.com/burntsushi/ripgrep)
-- [glow](https://github.com/charmbracelet/glow)
+- Superfile configuration
 
 ### Code development and version control
-
-- [Neovim](https://neovim.io/)
-- [Micro](https://micro-editor.github.io/)
-- [Lazygit](https://github.com/jesseduffield/lazygit)
-- [gh](https://cli.github.com/)
-- [Node.js](https://nodejs.org/en)
-- [pnpm](https://pnpm.io/installation)
-- [Go](https://go.dev/)
-- [Python](https://www.python.org/)
-
-### Extras
-
-- [Gum: glamorous shell scripts](https://github.com/charmbracelet/gum)
-
-## Neovim configuration
-
-For a complete list of plugins, LSP settings, and custom keybindings, please check out the [Neovim configuration documentation](nvim/README.md)
-
-## Scripts
-
-- [setup.sh](scripts/setup.sh): Installs and configures the development environment within the terminal.
+- Neovim configuration
+- Micro configuration
+- Git configuration
 
