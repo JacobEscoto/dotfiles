@@ -17,7 +17,6 @@ $character\
 right_format = """
 $nodejs\
 $python\
-$rust\
 $golang\
 $java\
 $cmd_duration\
@@ -41,9 +40,8 @@ disabled = true
 
 [character]
 disabled = false
-success_symbol = "[  ](bold fg:green)"
-error_symbol = "[ ](bold fg:red)"
-vimcmd_symbol = "[ ](bold fg:yellow)"
+success_symbol = "[  ](bold fg:#BCFF4F)"
+error_symbol = "[ ](bold fg:#FF2929)"
 
 [fill]
 symbol = " "
@@ -53,7 +51,7 @@ disabled = true
 
 [cmd_duration]
 min_time = 2_000
-format = "[in $duration ](fg:mauve)"
+format = "[ $duration ](fg:mauve)"
 
 
 [custom.giturl]
@@ -84,11 +82,11 @@ format = " on [$symbol$branch]($style)[](denim)"
 
 [git_status]
 format = "[$untracked$staged$modified$deleted$renamed$conflicted$ahead_behind ]($style)"
-staged = "[ +${count}](green)"
-modified = "[ !${count}](yellow)"
-renamed = "[ »${count}](blue)"
-deleted = "[ -${count}](red)"
-untracked = "[ ?${count}](red)"
+staged = "[ +${count}](#8DFA52)"
+modified = "[ !${count}](#ECFA52)"
+renamed = "[ »${count}](#5298FA)"
+deleted = "[ -${count}](#F52525)"
+untracked = "[ ?${count}](#FC4C17)"
 stashed = "[ ≡](cerulean)"
 conflicted = "[ ✖${count}](red bold)"
 
@@ -121,7 +119,6 @@ format = "[$symbol ]($style)"
 [c]
 symbol = " "
 format = "[$symbol ]($style)"
-
 
 [rust]
 symbol = ""
