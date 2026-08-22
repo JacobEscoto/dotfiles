@@ -77,12 +77,24 @@ vim.lsp.config("bash-language-server", {
   },
 })
 
+vim.lsp.config("clangd", {
+  cmd = { "clangd", "--background-index", "--clang-tidy" },
+  filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+  root_markers = {
+    "compile_commands.json",
+    "compile_flags.txt",
+    ".clang-d",
+    ".git",
+  },
+})
+
 vim.lsp.enable({
   "gopls",
   "lua-language-server",
   "bash-language-server",
   "typescript-language-server",
   "astro-language-server",
+  "clangd",
 })
 
 vim.diagnostic.config({
