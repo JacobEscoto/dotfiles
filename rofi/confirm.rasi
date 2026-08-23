@@ -9,9 +9,8 @@
 window {
   width:            250px;
   padding:          15px;
-  border:           1px;
-  border-radius:    6px;
-  border-color:     @bga;
+  border:           0px;
+  border-radius:    0px;
   location:         center;
   y-offset:         -2em;
   children:         [ "mainbox" ];
@@ -48,13 +47,13 @@ element {
 }
 
 element selected {
-  background-color: @ac;
-  text-color:       @bg;
+  background-color: @se;
+  text-color:       @ac;
 }
 
 element-text {
   background-color: transparent;
   text-color:       inherit;
-  font:             "Fira Code 18";
+  font:             "JetBrains Mono 18";
   horizontal-align: 0.5;
 }

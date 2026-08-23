@@ -15,9 +15,8 @@ window {
   transparency:     "real";
   background-color: @bg;
   text-color:       @fg;
-  border:           1px;
-  border-color:     @ac;
-  border-radius:    6px;
+  border:           0px;
+  border-radius:    0px;
   width:            480px;
   location:         center;
   x-offset:         0;

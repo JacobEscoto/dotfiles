@@ -13,9 +13,8 @@ window {
   transparency:     "real";
   background-color: @bg;
   text-color:       @fg;
-  border:           1px;
-  border-color:     @ac;
-  border-radius:    6px;
+  border:           0px;
+  border-radius:    0px;
   width:            450px;
   location:         northeast;
   anchor:           northeast;
@@ -26,8 +25,8 @@ window {
 prompt {
   enabled:          true;
   padding:          0px 0px 0px 0px;
-  background-color: @bg;
-  text-color:       @fg;
+  background-color: @ac;
+  text-color:       @bg;
   expand:           true;
   str:              "";
   font:             "FiraCode 10";
@@ -35,51 +34,49 @@ prompt {
 
 inputbar {
   children:         [ prompt, entry ];
-  background-color: @bg;
-  text-color:       @fg;
+  background-color: @ac;
+  text-color:       @bg;
   expand:           false;
   border:           0px 0px 1px 0px;
   border-radius:    0px;
-  border-color:     @se;
   margin:           0px;
   padding:          10px;
 }
 
 entry {
-  background-color: @bg;
-  text-color:       @fg;
-  placeholder:       "Search Audio Option...";
-  placeholder-color: @se;
+  background-color:  @ac;
+  text-color:        @bg;
+  placeholder:       "Search Options...";
+  placeholder-color: @bg;
   expand:            true;
   horizontal-align:  0;
 }
 
 listview {
-  background-color: @al;
-  padding:          10px;
+  background-color: @bg;
+  padding:          0px;
   columns:          1;
   lines:            10;
-  spacing:          6px;
+  spacing:          0px;
   cycle:            true;
   dynamic:          true;
   fixed-columns:    true;
 }
 
 mainbox {
-  background-color: @al;
+  background-color: @bg;
   border:           0px;
   border-radius:    0px;
-  border-color:     @ac;
   children:         [ inputbar, listview ];
-  spacing:          5px;
-  padding:          5px;
+  spacing:          0px;
+  padding:          0px;
 }
 
 element {
-  background-color: @bga;
+  background-color: @bg;
   text-color:       @fg;
   orientation:      horizontal;
-  border-radius:    8px;
+  border-radius:    0px;
   padding:          10px 12px 10px 12px;
 }
 
@@ -97,11 +94,10 @@ element-text {
 }
 
 element selected {
-  background-color: @ac;
-  text-color:       @bg;
+  background-color: @se;
+  text-color:       @ac;
   border:           0px;
-  border-radius:    8px;
-  border-color:     @ac;
+  border-radius:    0px;
 }
 
 error-message {
