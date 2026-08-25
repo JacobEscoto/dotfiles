@@ -3,6 +3,7 @@
 # ========================================================
 set $mod Mod4
 set $terminal kitty
+set $file_manager dolphin
 
 # Font for window titles
 font pango:Fira Code 10
@@ -14,8 +15,9 @@ for_window [workspace=".*"] fullscreen disable
 for_window [class="^.*"] border pixel 0
 
 # Gaps
-gaps inner 10
+gaps inner 5
 gaps outer 5
+gaps top 35
 smart_gaps off
 smart_borders on
 
@@ -35,7 +37,7 @@ exec_always --no-startup-id picom -b
 exec --no-startup-id flameshot
 
 # Toggle keyboard language
-exec_always --no-startup-id setxkbmap -layout us,es -option grp:alt_shift_toggle
+exec --no-startup-id bash -c "sleep 2 && setxkbmap -layout us,latam -option grp:alt_shift_toggle"
 
 # ========================================================
 #  KEYBINDINGS
@@ -60,13 +62,15 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 bindsym $mod+space exec --no-startup-id ~/.config/rofi/scripts/launcher.sh
 
 # File manager
-bindsym $mod+e exec --no-startup-id kitty -- spf
+bindsym $mod+e exec --no-startup-id $file_manager
+bindsym $mod+Shift+e exec --no-startup-id kitty -- spf
 
 # Task manager
 bindsym Control+Shift+Escape exec --no-startup-id kitty -- btop
 
 # Terminal
 bindsym $mod+Return exec $terminal
+bindsym $mod+Shift+t exec $terminal
 
 # Kill window
 bindsym $mod+Shift+q kill
@@ -159,12 +163,6 @@ bindsym $mod+Shift+9 move container to workspace number $ws9; workspace number $
 # Cycle workspaces
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
-
-
-# Assign applications to specific workspaces
-assign [class="zen"] workspace number $ws1
-assign [class="kitty"] workspace number $ws2
-assign [class="libreoffice"] workspace number $ws3
 
 # Zoom tools opens in floating mode. The main window of Zoom will remain fixed
 for_window [class="^zoom$"] floating enable
