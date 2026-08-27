@@ -13,7 +13,7 @@
     text_icon_padding  = 10
 
     # Border
-    frame_width   = 1
+    frame_width   = 0
     frame_color   = "#4DD07E"
 
     # Separator
@@ -21,7 +21,7 @@
     separator_color  = "#3F5360"
 
     # Radius
-    corner_radius = 4
+    corner_radius = 0
 
     # Font
     font = JetBrains Mono 10
