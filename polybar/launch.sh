@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 
-DIR="$HOME/.config/polybar"
-
 # Terminate polybar running instances
 killall -q polybar
 
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
-
-# Launch the main bar
-polybar -q main -c "$DIR"/config.ini &
+polybar debian 2>&1 | tee -a /tmp/polybat_logo.log &
+polybar left 2>&1 | tee -a /tmp/polybar_left.log &
+polybar center 2>&1 | tee -a /tmp/polybar_center.log &
+polybar right 2>&1 | tee -a /tmp/polybar_right.log &
