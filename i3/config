@@ -17,7 +17,7 @@ for_window [class="^.*"] border pixel 0
 # Gaps
 gaps inner 5
 gaps outer 5
-gaps top 35
+gaps top 40
 smart_gaps off
 smart_borders on
 
@@ -32,6 +32,7 @@ exec --no-startup-id i3-msg 'workspace 1:web; workspace 2:code; workspace 3:file
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-scale ~/Pictures/forest-wallpaper.jpg
 exec_always --no-startup-id picom -b
+exec_always --no-startup-id dunst
 
 # Start flameshot in the background
 exec --no-startup-id flameshot
@@ -75,9 +76,6 @@ bindsym $mod+Shift+t exec $terminal
 # Kill window
 bindsym $mod+Shift+q kill
 
-# Logout (i3 session)
-bindsym $mod+Shift+Escape exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes, exit i3' 'i3-msg exit'"
-
 # Floating modifier
 floating_modifier $mod
 
@@ -119,7 +117,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Lock screen
-bindsym $mod+Mod1+b exec --no-startup-id ~/.config/i3/scripts/lock.sh
+bindsym $mod+Escape exec --no-startup-id ~/.config/i3/scripts/lock.sh
 
 # Take screenshot with flameshot
 bindsym $mod+Shift+s exec --no-startup-id flameshot gui
