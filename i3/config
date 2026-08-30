@@ -24,6 +24,10 @@ smart_borders on
 # ========================================================
 #  STARTUP
 # ========================================================
+
+# Battery monitor
+exec_always --no-startup-id ~/.config/i3/scripts/battery.sh
+
 # Enable touchpad tapping
 exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 
