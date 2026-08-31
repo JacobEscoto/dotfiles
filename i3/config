@@ -15,8 +15,8 @@ for_window [workspace=".*"] fullscreen disable
 for_window [class="^.*"] border pixel 0
 
 # Gaps
-gaps inner 5
-gaps outer 5
+gaps inner 3
+gaps outer 3
 gaps top 40
 smart_gaps off
 smart_borders on

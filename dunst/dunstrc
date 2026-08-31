@@ -1,5 +1,5 @@
 [global]
-    monitor       = 0
+    monitor       = -1
     follow        = mouse
     transparency  = 0
 
@@ -7,7 +7,7 @@
     width              = (0, 430)
     height             = (0, 300)
     origin             = top-right
-    offset             = (10, 40)
+    offset             = (10, 50)
     padding            = 14
     horizontal_padding = 16
     text_icon_padding  = 10

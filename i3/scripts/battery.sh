@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus
+export DISPLAY=:0
+
 # Ensure it only exists one instance
 pkill -f "battery.sh" 2>/dev/null
 sleep 1
@@ -9,8 +12,8 @@ notified_10=false
 notified_5=false
 
 while true; do
-  battery=$(cat /sys/class/power_supply/BAT*/capacity 2>/dev/null | head -1)
-  status=$(cat /sys/class/power_supply/BAT*/status 2>/dev/null | head -1)
+  battery=$(cat /sys/class/power_supply/BAT1/capacity 2>/dev/null | head -1)
+  status=$(cat /sys/class/power_supply/BAT1/status 2>/dev/null | head -1)
 
   # Full charge notification
   if [ "$battery" -ge 95 ] && [ "$status" == "Charging" ]; then
