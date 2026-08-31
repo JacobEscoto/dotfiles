@@ -15,8 +15,8 @@ for_window [workspace=".*"] fullscreen disable
 for_window [class="^.*"] border pixel 0
 
 # Gaps
-gaps inner 3
-gaps outer 3
+gaps inner 5
+gaps outer 5
 gaps top 40
 smart_gaps off
 smart_borders on
@@ -165,6 +165,18 @@ bindsym $mod+Shift+9 move container to workspace number $ws9; workspace number $
 # Cycle workspaces
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
+
+#
+bindsym $mod+r mode "resize"
+
+mode "resize" {
+  bindsym h resize shrink width 10 px or 10 ppt
+  bindsym j resize grow height 10 px or 10 ppt
+  bindsym k resize shrink height 10 px or 10 ppt
+  bindsym l resize grow width 10 px or 10 ppt
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
 
 # Zoom tools opens in floating mode. The main window of Zoom will remain fixed
 for_window [class="^zoom$"] floating enable
