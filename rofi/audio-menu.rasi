@@ -13,8 +13,9 @@ window {
   transparency:     "real";
   background-color: @bg;
   text-color:       @fg;
-  border:           0px;
-  border-radius:    0px;
+  border:           2px;
+  border-color:     @muted;
+  border-radius:    12px;
   width:            450px;
   location:         northeast;
   anchor:           northeast;
@@ -25,8 +26,8 @@ window {
 prompt {
   enabled:          true;
   padding:          0px 0px 0px 0px;
-  background-color: @ac;
-  text-color:       @bg;
+  background-color: @bg;
+  text-color:       @fg;
   expand:           true;
   str:              "";
   font:             "FiraCode 10";
@@ -34,8 +35,8 @@ prompt {
 
 inputbar {
   children:         [ prompt, entry ];
-  background-color: @ac;
-  text-color:       @bg;
+  background-color: @bg;
+  text-color:       @fg;
   expand:           false;
   border:           0px 0px 1px 0px;
   border-radius:    0px;
@@ -44,10 +45,10 @@ inputbar {
 }
 
 entry {
-  background-color:  @ac;
-  text-color:        @bg;
+  background-color:  @bg;
+  text-color:        @fg;
   placeholder:       "Search Options...";
-  placeholder-color: @bg;
+  placeholder-color: @muted;
   expand:            true;
   horizontal-align:  0;
 }
@@ -95,7 +96,7 @@ element-text {
 
 element selected {
   background-color: @se;
-  text-color:       @ac;
+  text-color:       @lightblue;
   border:           0px;
   border-radius:    0px;
 }

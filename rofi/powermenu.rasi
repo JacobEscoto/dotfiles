@@ -15,8 +15,9 @@ window {
   transparency:     "real";
   background-color: @bg;
   text-color:       @fg;
-  border:           0px;
-  border-radius:    0px;
+  border:           2px;
+  border-color:     @muted;
+  border-radius:    12px;
   width:            480px;
   location:         center;
   x-offset:         0;
@@ -47,7 +48,7 @@ inputbar {
 }
 
 listview {
-  background-color: @al;
+  background-color: @bg;
   padding:          10px;
   columns:          5;
   lines:            1;
@@ -58,20 +59,21 @@ listview {
 }
 
 mainbox {
-  background-color: @al;
+  background-color: @bg;
   border:           0px;
   border-radius:    0px;
-  border-color:     @ac;
   children:         [ inputbar, listview ];
   spacing:          5px;
   padding:          5px;
 }
 
 element {
-  background-color: @bga;
+  background-color: @bg;
   text-color:       @fg;
   orientation:      vertical;
+  border:           1px;
   border-radius:    8px;
+  border-color:     @muted;
   padding:          14px 4px 14px 4px;
 }
 
@@ -89,9 +91,9 @@ element-text {
 }
 
 element selected {
-  background-color: @ac;
-  text-color:       @bg;
-  border:           0px;
+  background-color: @se;
+  text-color:       @lightblue;
+  border:           1px;
   border-radius:    8px;
-  border-color:     @ac;
+  border-color:     @lightblue;
 }

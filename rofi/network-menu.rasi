@@ -13,7 +13,9 @@ window {
   transparency:     "real";
   background-color: @bg;
   text-color:       @fg;
-  border-radius:    0px;
+  border:           2px;
+  border-color:     @muted;
+  border-radius:    12px;
   width:            420px;
   location:         northeast;
   anchor:           northeast;
@@ -24,8 +26,8 @@ window {
 prompt {
   enabled:          true;
   padding:          0px 0px 0px 0px;
-  background-color: @ac;
-  text-color:       @bg;
+  background-color: @bg;
+  text-color:       @fg;
   expand:           true;
   str:              "";
   font:             "JetBrains Mono 10";
@@ -33,8 +35,8 @@ prompt {
 
 inputbar {
   children:         [ prompt, entry ];
-  background-color: @ac;
-  text-color:       @bg;
+  background-color: @bg;
+  text-color:       @fg;
   expand:           false;
   border:           0px 0px 1px 0px;
   border-radius:    0px;
@@ -44,16 +46,16 @@ inputbar {
 }
 
 entry {
-  background-color: @ac;
-  text-color:       @bg;
+  background-color: @bg;
+  text-color:       @fg;
   placeholder:       "Search Network...";
-  placeholder-color: @bga;
+  placeholder-color: @muted;
   expand:            true;
   horizontal-align:  0;
 }
 
 listview {
-  background-color: @al;
+  background-color: @bg;
   padding:          0px;
   columns:          1;
   lines:            8;
@@ -64,10 +66,9 @@ listview {
 }
 
 mainbox {
-  background-color: @al;
+  background-color: @bg;
   border:           0px;
   border-radius:    0px;
-  border-color:     @ac;
   children:         [ inputbar, listview ];
   spacing:          5px;
   padding:          0px;
@@ -96,14 +97,14 @@ element-text {
 
 element selected {
   background-color: @se;
-  text-color:       @ac;
+  text-color:       @lightblue;
   border:           0px;
   border-radius:    0px;
 }
 
 error-message {
   background-color: @bg;
-  text-color:       @fg;
+  text-color:       @red;
   border:           0px;
   border-radius:    0px;
   padding:          10px;

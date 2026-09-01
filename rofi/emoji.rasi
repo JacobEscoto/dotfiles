@@ -1,0 +1,70 @@
+@import "colors.rasi"
+
+* {
+  background-color: transparent;
+  text-color:       @fg;
+  font:             "FiraCode Nerd Font 11";
+}
+
+window {
+  transparency:     "real";
+  background-color: @bg;
+  border:           2px;
+  border-color:     @muted;
+  border-radius:    12px;
+  width:            480px;
+  location:         center;
+  padding:          14px;
+}
+
+mainbox {
+  background-color: transparent;
+  children:         [ inputbar, listview ];
+  spacing:          10px;
+}
+
+inputbar {
+  background-color: @se;
+  text-color:       @fg;
+  border-radius:    8px;
+  padding:          8px 12px;
+  children:         [ prompt, entry ];
+}
+
+prompt {
+  text-color: @green;
+  font:       "FiraCode Nerd Font Bold 11";
+}
+
+entry {
+  placeholder:        "Search emoji...";
+  placeholder-color:  @muted;
+  text-color:         @fg;
+}
+
+listview {
+  columns:          6;
+  lines:            8;
+  spacing:          6px;
+  fixed-height:     true;
+  background-color: transparent;
+  scrollbar:        false;
+}
+
+element {
+  padding:          8px;
+  border-radius:    8px;
+  background-color: @se;
+}
+
+element selected {
+  background-color: @muted;
+  border:           1px;
+  border-color:     @green;
+}
+
+element-text {
+  horizontal-align:   0.5;
+  vertical-align:     0.5;
+  font:               "Noto Color Emoji 14";
+}

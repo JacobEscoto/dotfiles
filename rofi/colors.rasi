@@ -1,8 +1,10 @@
 * {
   al:  #00000000;
-  bg:  #12151AFF;
-  bga: #191D24FF;
-  fg:  #DCE0E5FF;
-  ac:  #4DD07EFF;
-  se:  #1D222BFF;
+  bg:  #11111B;
+  fg:  #CDD6F4;
+  se:  #181825;
+  muted: #313244;
+  green: #A6E3A1;
+  red: #E78284;
+  lightblue: #89DCEB;
 }

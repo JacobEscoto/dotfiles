@@ -9,8 +9,9 @@
 window {
   width:            250px;
   padding:          15px;
-  border:           0px;
-  border-radius:    0px;
+  border:           2px;
+  border-color:     @muted;
+  border-radius:    12px;
   location:         center;
   y-offset:         -2em;
   children:         [ "mainbox" ];
@@ -39,16 +40,20 @@ listview {
 }
 
 element {
-  background-color: @bga;
+  background-color: @bg;
   text-color:       @fg;
   padding:          8px;
-  border-radius:    4px;
+  border:           1px;
+  border-radius:    6px;
+  border-color:     @muted;
   horizontal-align: 0.5;
 }
 
 element selected {
   background-color: @se;
-  text-color:       @ac;
+  text-color:       @lightblue;
+  border:           1px;
+  border-color:     @lightblue;
 }
 
 element-text {
