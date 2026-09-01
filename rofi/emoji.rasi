@@ -43,8 +43,8 @@ entry {
 }
 
 listview {
-  columns:          6;
-  lines:            8;
+  columns:          8;
+  lines:            4;
   spacing:          6px;
   fixed-height:     true;
   background-color: transparent;
