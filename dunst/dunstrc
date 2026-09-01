@@ -13,15 +13,15 @@
     text_icon_padding  = 10
 
     # Border
-    frame_width   = 0
-    frame_color   = "#4DD07E"
+    frame_width   = 1
+    frame_color   = "#17222B"
 
     # Separator
     separator_height = 1
     separator_color  = "#3F5360"
 
     # Radius
-    corner_radius = 0
+    corner_radius = 8
 
     # Font
     font = JetBrains Mono 10
@@ -49,16 +49,16 @@
     mouse_right_click  = close_all
 
 [urgency_low]
-    background = "#212B30"
-    foreground = "#6D8895"
-    timeout    = 4
+    background = "#0F151C"
+    foreground = "#C4C7C5"
+    timeout    = 5
 
 [urgency_normal]
-    background = "#212B30"
+    background = "#0F151C"
     foreground = "#C4C7C5"
     timeout    = 5
 
 [urgency_critical]
-    background = "#212B30"
+    background = "#0F151C"
     foreground = "#EC7875"
-    timeout    = 0
+    timeout    = 10
