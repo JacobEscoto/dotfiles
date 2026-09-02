@@ -1,6 +1,8 @@
 # Jacob's dotfiles
 
-My personal workflow configuration and customization for **Debian/GNU Linux**.
+My personal workflow configuration and customization for **Debian GNU/Linux**.
+
+![Terminal Screenshot](screenshots/terminal_preview.png)
 
 ## Contents
 
