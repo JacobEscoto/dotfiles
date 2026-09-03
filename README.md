@@ -2,7 +2,11 @@
 
 My personal workflow configuration and customization for **Debian GNU/Linux**.
 
-![Terminal Screenshot](screenshots/terminal_preview.png)
+<details>
+  <summary><b>Screenshots</b></summary>
+
+  <img src="./screenshots/terminal_preview.png" alt="Terminal Preview" />
+</details>
 
 ## Contents
 
