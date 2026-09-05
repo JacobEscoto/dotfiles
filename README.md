@@ -6,6 +6,7 @@ My personal workflow configuration and customization for **Debian GNU/Linux**.
   <summary><b>Screenshots</b></summary>
 
   <img src="./screenshots/terminal_preview.png" alt="Terminal Preview" />
+  <img src="./screenshots/desktop_preview.png" alt="Desktop Preview" />
 </details>
 
 ## Contents
