@@ -1,3 +1,5 @@
+// Package system has the main function to detect and collect basic
+// data about the user's OS, such as the OS name and version, internet connection, etc.
 package system
 
 import (
