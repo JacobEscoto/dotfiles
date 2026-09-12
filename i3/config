@@ -30,9 +30,6 @@ smart_borders on
 # Enable touchpad tapping
 exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 
-# Start server for SwayOSD
-exec_always --no-startup-id swayosd-server
-
 # Environment variable for dolphin
 exec --no-startup-id export XDG_MENU_PREFIX=plasma-
 
@@ -47,16 +44,16 @@ exec_always --no-startup-id dunst
 exec --no-startup-id flameshot
 
 # Toggle keyboard language
-exec --no-startup-id bash -c "sleep 2 && setxkbmap -layout us,latam -option grp:alt_shift_toggle"
+exec --no-startup-id bash -c "sleep 2 && setxkbmap -layout 'us,latam' -option 'grp:alt_shift_toggle'"
 
 # ========================================================
 #  KEYBINDINGS
 # ========================================================
 
 # Volume
-bindsym XF86AudioRaiseVolume exec swayosd-client --output-volume raise
-bindsym XF86AudioLowerVolume exec swayosd-client --output-volume lower
-bindsym XF86AudioMute exec swayosd-client --output-volume mute-toggle 
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle 
 
 # Multimedia playback controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -64,8 +61,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Brightness
-bindsym XF86MonBrightnessUp exec swayosd-client --brightness +10
-bindsym XF86MonBrightnessDown exec swayosd-client --brightness -10
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
 # App launcher
 bindsym $mod+space exec --no-startup-id ~/.config/rofi/scripts/launcher.sh
@@ -197,7 +194,6 @@ for_window [class="^zoom$" title="Zoom Meeting"] floating enable, resize set 100
 
 # File management and system resources
 for_window [class="dolphin"] floating enable, resize set 1000 600
-for_window [class="swayosd-server"] floating enable, border none
 for_window [class="kith"] floating enable, border none, sticky enable
 
 # ========================================================
