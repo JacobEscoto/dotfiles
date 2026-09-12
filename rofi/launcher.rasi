@@ -4,7 +4,6 @@ configuration {
   font:                "JetBrains Mono 10";
   show-icons:          true;
   icon-theme:          "Papirus";
-  display-drun:        " ";
   drun-display-format: "{name}";
   disable-history:     false;
   fullscreen:          false;
@@ -39,13 +38,13 @@ entry {
   placeholder-color: @muted;
   expand:            true;
   horizontal-align:  0;
-  placeholder:       "Search application...";
+  placeholder:       " Search application...";
   padding:           0px 0px 0px 0px;
   blink:             true;
 }
 
 inputbar {
-  children:         [ prompt, entry ];
+  children:         [ entry ];
   background-color: @bg;
   text-color:       @fg;
   expand:           false;

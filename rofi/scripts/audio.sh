@@ -84,19 +84,16 @@ main_menu() {
   local mic_mute
   mic_mute=$(get_mic_mute)
 
-  local vol_icon
-  vol_icon=$(get_volume_icon "$vol" "$mute")
-
   declare -A action_map
   local entries=()
 
   # Volume & Mute actions
   if [[ "$mute" == "yes" ]]; then
-    local mute_label="$ICON_VOL_MUTE  Unmute Audio (Currently Muted)"
+    local mute_label="$ICON_VOL_HIGH  Unmute Audio (Currently Muted)"
     action_map["$mute_label"]="toggle_mute"
     entries+=("$mute_label")
   else
-    local mute_label="$vol_icon  Mute Audio (Current: ${vol}%)"
+    local mute_label="$ICON_VOL_MUTE  Mute Audio (Current: ${vol}%)"
     action_map["$mute_label"]="toggle_mute"
     entries+=("$mute_label")
   fi
