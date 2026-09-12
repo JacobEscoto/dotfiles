@@ -27,11 +27,11 @@ smart_borders on
 #  STARTUP
 # ========================================================
 
-# Widgets
-exec --no-startup-id /usr/local/bin/kith
-
 # Enable touchpad tapping
 exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+
+# Start server for SwayOSD
+exec_always --no-startup-id swayosd-server
 
 # Environment variable for dolphin
 exec --no-startup-id export XDG_MENU_PREFIX=plasma-
@@ -54,9 +54,9 @@ exec --no-startup-id bash -c "sleep 2 && setxkbmap -layout us,latam -option grp:
 # ========================================================
 
 # Volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
-bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec swayosd-client --output-volume raise
+bindsym XF86AudioLowerVolume exec swayosd-client --output-volume lower
+bindsym XF86AudioMute exec swayosd-client --output-volume mute-toggle 
 
 # Multimedia playback controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -64,8 +64,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
+bindsym XF86MonBrightnessUp exec swayosd-client --brightness +10
+bindsym XF86MonBrightnessDown exec swayosd-client --brightness -10
 
 # App launcher
 bindsym $mod+space exec --no-startup-id ~/.config/rofi/scripts/launcher.sh
@@ -180,10 +180,10 @@ bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+r mode "resize"
 
 mode "resize" {
-  bindsym h resize shrink width 10 px or 10 ppt
-  bindsym j resize grow height 10 px or 10 ppt
-  bindsym k resize shrink height 10 px or 10 ppt
-  bindsym l resize grow width 10 px or 10 ppt
+  bindsym h resize shrink width 5 px or 5 ppt
+  bindsym j resize grow height 5 px or 5 ppt
+  bindsym k resize shrink height 5 px or 5 ppt
+  bindsym l resize grow width 5 px or 5 ppt
   bindsym Escape mode "default"
 }
 
@@ -197,7 +197,7 @@ for_window [class="^zoom$" title="Zoom Meeting"] floating enable, resize set 100
 
 # File management and system resources
 for_window [class="dolphin"] floating enable, resize set 1000 600
-
+for_window [class="swayosd-server"] floating enable, border none
 for_window [class="kith"] floating enable, border none, sticky enable
 
 # ========================================================
