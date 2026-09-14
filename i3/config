@@ -7,21 +7,29 @@ set $file_manager dolphin
 set $browser flatpak run app.zen_browser.zen
 
 # Font for window titles
-font pango:Fira Code 10
+font pango:Fira Code 8
 
-# Disable fullscreen for the first window
-for_window [workspace=".*"] fullscreen disable
+default_border pixel 0
+default_floating_border pixel 1
+hide_edge_borders both
 
-# Window borders
-for_window [class="^.*"] border pixel 2
-for_window [class="kith"] border pixel 0
+workspace_layout tabbed
+workspace_auto_back_and_forth yes
+focus_follows_mouse no
+mouse_warping output
+popup_during_fullscreen smart
 
 # Gaps
-gaps inner 5
-gaps outer 5
-gaps top 40
+gaps inner 0
+gaps outer 0
+gaps top 30
 smart_gaps off
-smart_borders on
+
+# Scratchpad
+set $scratch_term kitty --class scratch_term
+bindsym $mod+grave exec --no-startup-id $scratch_term
+for_window [class="scratch_term"] floating enable, move scratchpad, resize set 800 500, border pixel 0
+bindsym $mod+Shift+grave scratchpad show
 
 # ========================================================
 #  STARTUP
@@ -34,7 +42,6 @@ exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapp
 exec --no-startup-id export XDG_MENU_PREFIX=plasma-
 
 # Run commands for desktop personalization (Workspaces, polybar, wallpaper and picom).
-exec --no-startup-id i3-msg 'workspace 1:web; workspace 2:code; workspace 3:files; workspace 1:web'
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-scale ~/Pictures/forest-wallpaper.jpg
 exec_always --no-startup-id picom -b
@@ -69,7 +76,6 @@ bindsym $mod+space exec --no-startup-id ~/.config/rofi/scripts/launcher.sh
 
 # File manager
 bindsym $mod+e exec --no-startup-id $file_manager
-bindsym $mod+Shift+e exec --no-startup-id kitty -- spf
 
 # Task manager
 bindsym Control+Shift+Escape exec --no-startup-id kitty -- btop
@@ -84,11 +90,19 @@ bindsym $mod+Shift+q kill
 # Show emoji menu
 bindsym $mod+period exec rofi -show emoji -modi emoji -theme ~/.config/rofi/emoji.rasi -emoji-format "{emoji}" -p "󰞅"
 
+# Change layout mode
+bindsym $mod+w layout tabbed
+bindsym $mod+y layout stacking
+bindsym $mod+u layout toggle split
+
 # Web browser
 bindsym $mod+Shift+w exec $browser
 
 # Floating modifier
 floating_modifier $mod
+
+# Floating toggle
+bindsym $mod+Shift+space floating toggle
 
 # Change focus
 bindsym $mod+h focus left
@@ -173,7 +187,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9; workspace number $
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
-#
+# Resize mode
 bindsym $mod+r mode "resize"
 
 mode "resize" {
@@ -190,11 +204,12 @@ mode "resize" {
 
 # Zoom meeting and tools
 for_window [class="^zoom$"] floating enable
-for_window [class="^zoom$" title="Zoom Meeting"] floating enable, resize set 1000 800
+for_window [class="^zoom$" title="Zoom Meeting"] floating enable, resize set 1100 650, move position center
 
 # File management and system resources
 for_window [class="dolphin"] floating enable, resize set 1000 600
 for_window [class="kith"] floating enable, border none, sticky enable
+for_window [class="Pavucontrol"] floating enable
 
 # ========================================================
 #  COLORS
