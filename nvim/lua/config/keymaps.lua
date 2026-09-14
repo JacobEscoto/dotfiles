@@ -65,3 +65,5 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move focus to the right window"
 -- Buffer navigation
 vim.keymap.set("n", "[b", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
 vim.keymap.set("n", "]b", "<cmd>bnext<cr>", { desc = "Next buffer" })
+
+vim.keymap.set("n", "<C-A-q>", ":qa<CR>", { desc = "Quit Neovim" })
