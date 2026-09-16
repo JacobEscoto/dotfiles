@@ -21,7 +21,7 @@ popup_during_fullscreen smart
 
 # Gaps
 gaps inner 0
-gaps outer 0
+gaps outer 2
 gaps top 30
 smart_gaps off
 
