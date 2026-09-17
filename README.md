@@ -1,6 +1,6 @@
 # Jacob's dotfiles
 
-My personal workflow configuration and customization for **Debian GNU/Linux**.
+My personal workflow configuration and customization for **Debian GNU/Linux**. This configuration is carefully chosen for extreme minimalism and to maximize my laptop's performance.
 
 <details>
   <summary><b>Screenshots</b></summary>
