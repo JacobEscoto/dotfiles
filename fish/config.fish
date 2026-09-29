@@ -15,6 +15,8 @@ if test -d /home/linuxbrew/.linuxbrew
 end
 
 if status is-interactive
+  abbr -a update "sudo apt update"
+
   # Abbreviations for system commands
   abbr -a reload "exec fish"
   abbr -a fish-config "nvim ~/.config/fish/config.fish"
