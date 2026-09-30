@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Neovim
+Comment=Vim-based text editor
+Exec=nvim %F
+Icon=nvim
+Categories=Utility;Development;TextEditor;
+Terminal=true
+MimeType=text/plain;text/x-shellscript;text/x-c;text/x-c++;application/x-python;
+Keywords=editor;text;vim;
+StartupNotify=true
