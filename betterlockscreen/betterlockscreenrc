@@ -1,4 +1,27 @@
+# Effects
 effect="dimblur"
 dim_level="40"
+offtime="60"
 
-volume="60"
+# UI Colors
+color="#11111b"
+
+# Ring color
+ringcolor="15152488"
+insidecolor="11111b88"
+
+# Highlight
+keyhlcolor="89dcebff"
+bshlcolor="e78284ff"
+
+# Verification color
+verifcolor="86a7ebff"
+verifringcolor="86a7ebff"
+
+# Error color
+wrongcolor="e78284ff"
+wrongringcolor="e78284ff"
+
+# general text
+textcolor="cdd6f4ff"
+
