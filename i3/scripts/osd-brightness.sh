@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Adjusts the brightness with brightnessctl
 # '-q' flag avoids terminal output

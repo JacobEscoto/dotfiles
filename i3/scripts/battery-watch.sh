@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 BATTERY="BAT1"
 CHECK_INTERVAL=30

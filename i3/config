@@ -4,23 +4,22 @@
 set $mod Mod4
 set $terminal kitty
 set $file_manager dolphin
-set $browser flatpak run app.zen_browser.zen
-
-# set i3 scripts directory as variable
-set $i3_scripts ~/.config/i3/scripts
+set $browser firefox
 
 # Font for window titles
 font pango:Fira Code 8
 
-default_border pixel 0
+default_border pixel 1
 default_floating_border pixel 1
 hide_edge_borders both
 
-workspace_layout tabbed
+workspace_layout default
 workspace_auto_back_and_forth yes
 focus_follows_mouse no
 mouse_warping output
 popup_during_fullscreen smart
+
+default_orientation vertical
 
 # Gaps
 gaps inner 0
@@ -57,9 +56,9 @@ exec --no-startup-id bash -c '~/.config/i3/scripts/battery-watch.sh'
 # ========================================================
 
 # Volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id $i3_scripts/osd-volume.sh -i 5
-bindsym XF86AudioLowerVolume exec --no-startup-id $i3_scripts/osd-volume.sh -d 5
-bindsym XF86AudioMute exec --no-startup-id $i3_scripts/osd-volume.sh -t
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/scripts/osd-volume.sh -i 5
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/scripts/osd-volume.sh -d 5
+bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/scripts/osd-volume.sh -t
 
 # Multimedia playback controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -67,8 +66,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id $i3_scripts/osd-brightness.sh set 10%+
-bindsym XF86MonBrightnessDown exec --no-startup-id $i3_scripts/osd-brightness.sh set 10%-
+bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/scripts/osd-brightness.sh set 10%+
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/osd-brightness.sh set 10%-
 
 # App launcher
 bindsym $mod+space exec --no-startup-id ~/.config/rofi/scripts/launcher.sh
@@ -198,16 +197,11 @@ mode "resize" {
 }
 
 # ========================================================
-#  FLOATING RULE FOR SELECTED WINDOWS/APPS
+#  Floating mode
 # ========================================================
-
-# File management and system resources
-for_window [class="dolphin"] floating enable, resize set 1000 600
-for_window [class="kith"] floating enable, border none, sticky enable
-for_window [class="Pavucontrol"] floating enable
-
-for_window [class="Polybar"] floating enable, sticky enable
-for_window [class="polybar"] floating enable, sticky enable
+for_window [class="dolphin"] floating enable, border none
+for_window [class="kith"] floating enable, border none
+for_window [class="Polybar"] floating enable, border none
 
 # ========================================================
 #  COLORS

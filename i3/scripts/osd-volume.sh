@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 # This script adjusts the volume using pamixer (-i for volume up, -d for volume down, -t for toggle mute)
 pamixer "$@"
