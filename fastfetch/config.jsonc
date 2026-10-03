@@ -1,88 +1,120 @@
 {
-    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-    "logo": {
-      "type": "auto",
-      "source": "/home/djacoz/.config/fastfetch/kanagawa-wave.png",
-      "width": 30,
-      "height": 18,
-      "padding": {
-        "top": 1,
-        "left": 1,
-        "right": 3
-      }
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "file",
+    "source": "~/.config/fastfetch/dragon.txt",
+    "width": 48,
+    "height": 24,
+    "padding": {
+      "top": 0,
+      "left": 2,
+      "right": 2,
+      "bottom": 2
     },
-    "display": {
-      "separator": ": "
+    "color": {
+      "1": "38;2;247;116;40"
+    }
+  },
+  "display": {
+    "separator": " │ "
+  },
+  "modules": [
+    "break",
+    {
+      "type": "custom",
+      "format": "{#38;2;247;116;40}╭─ 󰌢  System ─────────────────────────────╮{#}"
     },
-    "modules": [
-      "break",
-      "break",
-      "break",
-      {
-        "type": "title",
-        "key": "{#94} User{#}",
-        "format": "{user-name}"
-      },
-      {
-        "type": "datetime",
-        "key": "{#94} Datetime{#}",
-        "format": "{year}-{month-pretty}-{day-in-month} {hour-pretty}:{minute-pretty}:{second-pretty}"
-      },
-      {
-        "type": "host",
-        "key": "{#94}󰪫 Machine{#}",
-        "format": "{name} {version}"
-      },
-      {
-        "type": "custom",
-        "format": "{#90}──────────────────────────────────────────────────────────{#}"
-      },
-      {
-        "type": "os",
-        "key": "{#94} OS{#}",
-        "format": "{?pretty-name}{pretty-name}{#90}{?}{/pretty-name}{name}{/} {codename} [v{version}] [{arch}]"
-      },
-      {
-        "type": "kernel",
-        "key": "{#94}󰒋 Kernel{#}",
-        "format": "{sysname} {#90}[v{release}]"
-      },
-      {
-        "type": "uptime",
-        "key": "{#94}󰚰 Uptime{#}",
-        "format": "{?days}{days} Days + {?}{hours} hours {minutes} minutes {seconds} seconds"
-      },
-      {
-        "type": "custom",
-        "format": "{#90}──────────────────────────────────────────────────────────{#}"
-      },
-      {
-        "type": "cpu",
-        "key": "{#94} CPU{#}",
-        "showPeCoreCount": true,
-        "format": "{name} {#90}[C:{core-types}] [{freq-max}]"
-      },
-      {
-        "type": "gpu",
-        "key": "{#94}󰢮 GPU{#}",
-        "detectionMethod": "auto",
-        "driverSpecific": true,
-        "format": "{name} {#90}[C:{core-count}]{?frequency} [{frequency}]{?} [{type}]"
-      },
-      {
-        "type": "memory",
-        "key": "{#94} Memory{#}",
-        "format": "{used} / {total} ({percentage})"
-      },
-      {
-        "type": "disk",
-        "key": "{#94} Disk{#}",
-        "format": "{size-used} / {size-total}"
-      },
-      "break",
-      {
-        "type": "custom",
-        "format": "\u001b[38;2;215;18;50m■\u001b[0m \u001b[38;2;2;6;40m■\u001b[0m \u001b[38;2;32;36;69m■\u001b[0m \u001b[38;2;143;147;173m■\u001b[0m \u001b[38;2;79;83;115m■\u001b[0m \u001b[38;2;7;7;40m■\u001b[0m"
-      }
-    ]
-  }
+    {
+      "type": "title",
+      "key": "{#38;2;247;116;40}│{#} {#38;2;252;180;120} User{#}    ",
+      "format": "{user-name}"
+    },
+    {
+      "type": "host",
+      "key": "{#38;2;247;116;40}│{#} {#38;2;252;180;120}󰌢 Host{#}    ",
+      "format": "{name}"
+    },
+    {
+      "type": "os",
+      "key": "{#38;2;247;116;40}│{#} {#38;2;252;180;120} OS{#}      ",
+      "format": "{name} {version}"
+    },
+    {
+      "type": "kernel",
+      "key": "{#38;2;247;116;40}│{#} {#38;2;252;180;120}󰒋 Kernel{#}  ",
+      "format": "{sysname} {release}"
+    },
+    {
+      "type": "uptime",
+      "key": "{#38;2;247;116;40}│{#} {#38;2;252;180;120}󱎫 Uptime{#}  ",
+      "format": "{days}d {hours}h {minutes}m"
+    },
+    {
+      "type": "custom",
+      "format": "{#38;2;247;116;40}├─ 󰍹  Desktop ────────────────────────────┤{#}"
+    },
+    {
+      "type": "wm",
+      "key": "{#38;2;247;116;40}│{#} {#38;2;252;180;120} WM{#}      "
+    },
+    {
+      "type": "terminal",
+      "key": "{#38;2;247;116;40}│{#} {#38;2;252;180;120} Terminal{#}"
+    },
+    {
+      "type": "shell",
+      "key": "{#38;2;247;116;40}│{#} {#38;2;252;180;120}󰞷 Shell{#}   "
+    },
+    {
+      "type": "terminalfont",
+      "key": "{#38;2;247;116;40}│{#} {#38;2;252;180;120}󰛖 Font{#}    "
+    },
+    {
+      "type": "icons",
+      "key": "{#38;2;247;116;40}│{#} {#38;2;252;180;120}󰀻 Icons{#}   "
+    },
+    {
+      "type": "custom",
+      "format": "{#38;2;247;116;40}├─ 󰍛  Hardware ───────────────────────────┤{#}"
+    },
+    {
+      "type": "cpu",
+      "key": "{#38;2;247;116;40}│{#} {#38;2;252;180;120}󰍛 CPU{#}     ",
+      "format": "{name}"
+    },
+    {
+      "type": "gpu",
+      "key": "{#38;2;247;116;40}│{#} {#38;2;252;180;120}󰢮 GPU{#}     ",
+      "format": "{name}"
+    },
+    {
+      "type": "display",
+      "key": "{#38;2;247;116;40}│{#} {#38;2;252;180;120}󰍹 Display{#} ",
+      "format": "{width}x{height} @ {refresh-rate}Hz"
+    },
+    {
+      "type": "memory",
+      "key": "{#38;2;247;116;40}│{#} {#38;2;252;180;120}󰘚 RAM{#}     ",
+      "format": "{used} / {total}"
+    },
+    {
+      "type": "swap",
+      "key": "{#38;2;247;116;40}│{#} {#38;2;252;180;120}󰓡 Swap{#}    ",
+      "format": "{used} / {total}"
+    },
+    {
+      "type": "disk",
+      "key": "{#38;2;247;116;40}│{#} {#38;2;252;180;120}󰋊 Disk{#}    ",
+      "format": "{size-used} / {size-total}"
+    },
+    {
+      "type": "custom",
+      "format": "{#38;2;247;116;40}╰─────────────────────────────────────────╯{#}"
+    },
+    "break",
+    {
+      "type": "colors",
+      "symbol": "circle"
+    }
+  ]
+}
