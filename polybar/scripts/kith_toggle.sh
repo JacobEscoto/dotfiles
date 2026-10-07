@@ -1,7 +1,7 @@
 #!/bin/bash
 
-CAL_WIDTH=260
-BAR_OFFSET_Y=38
+CAL_WIDTH=480
+BAR_OFFSET_Y=30
 
 SCREEN_WIDTH=$(xdotool getdisplaygeometry | cut -d' ' -f1)
 
@@ -23,4 +23,7 @@ else
 
   xdotool windowmove "$WID_ALL" "$POS_X" "$POS_Y"
   xdotool windowmap "$WID_ALL"
+
+  sleep 0.05
+  xdotool windowmove "$WID_ALL" "$POS_X" "$POS_Y"
 fi
