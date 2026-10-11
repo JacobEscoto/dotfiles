@@ -30,6 +30,15 @@ if status is-interactive
   abbr -a lsd "eza --icons=always --only-dirs"
   abbr -a lsf "eza --icons=always --only-files"
 
+  # Quick tools (bat & lazygit)
+  if type -q bat
+    abbr -a cat "bat --paging=never"
+    abbr -a preview "bat"
+  end
+  if type -q lazygit
+    abbr -a lg "lazygit"
+  end
+
   # Syntax Colors
   set -g fish_color_command 76abdf
   set -g fish_color_param c9ffe5
@@ -51,10 +60,20 @@ if status is-interactive
     ssh-add ~/.ssh/id_22519 2> /dev/null
   end
 
-  # Interactive tools
-  zoxide init fish | source
-  starship init fish | source
+  # Interactive shell integrations
+  if type -q zoxide
+    zoxide init fish | source
+  end
+  if type -q starship
+    starship init fish | source
+  end
+  if type -q fzf
+    fzf --fish | source
+  end
 
   # Welcome
-  fastfetch
+  if type -q fastfetch
+    fastfetch
+  end
 end
+

@@ -7,10 +7,10 @@ set $file_manager dolphin
 set $browser firefox
 
 # Font for window titles
-font pango:Fira Code 8
+font pango:Rubik 8
 
-default_border pixel 1
-default_floating_border pixel 1
+default_border none
+default_floating_border none
 hide_edge_borders both
 
 workspace_layout default
@@ -19,11 +19,11 @@ focus_follows_mouse no
 mouse_warping output
 popup_during_fullscreen smart
 
-default_orientation vertical
+default_orientation horizontal
 
 # Gaps
-gaps inner 0
-gaps outer 2
+gaps inner 6
+gaps outer 4
 gaps top 30
 smart_gaps off
 
@@ -31,15 +31,15 @@ smart_gaps off
 #  STARTUP
 # ========================================================
 
-# Enable touchpad tapping
-exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+# Enable touchpad tapping dynamically
+exec --no-startup-id ~/.config/i3/scripts/touchpad-setup.sh
 
 # Environment variable for dolphin
 exec --no-startup-id export XDG_MENU_PREFIX=plasma-
 
 # Run commands for desktop personalization (Workspaces, polybar, wallpaper and picom).
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id feh --bg-scale ~/Pictures/forest-wallpaper.jpg
+exec_always --no-startup-id ~/.config/i3/scripts/set-wallpaper.sh
 exec_always --no-startup-id picom -b
 exec_always --no-startup-id dunst
 
@@ -49,6 +49,7 @@ exec --no-startup-id flameshot
 # Toggle keyboard language
 exec --no-startup-id bash -c "sleep 2 && setxkbmap -layout 'us,latam' -option 'grp:alt_shift_toggle'"
 
+# Battery monitoring
 exec --no-startup-id bash -c '~/.config/i3/scripts/battery-watch.sh'
 
 # ========================================================
@@ -200,7 +201,6 @@ mode "resize" {
 #  Floating mode
 # ========================================================
 for_window [class="dolphin"] floating enable, border none
-for_window [class="kith"] floating enable, border none
 for_window [class="Polybar"] floating enable, border none
 
 # ========================================================
@@ -211,15 +211,15 @@ for_window [class="Polybar"] floating enable, border none
 set $bg           #11111b
 set $fg           #CDD6F4
 set $selected     #181825
+set $surface      #313244
 set $muted        #585B70
-set $muted_dark   #313244
-set $lightblue    #89DCEB
-set $red          #E78284
+set $accent       #89DCEB
+set $urgent       #E78284
 
 # class                   border      background    text        indicator   child_border
-client.focused            $lightblue  $selected     $fg         $lightblue  $lightblue
-client.focused_inactive   $muted_dark $selected     $fg         $muted_dark $muted_dark
-client.unfocused          $muted_dark $bg           $muted      $muted_dark $muted_dark
-client.urgent             $red        $bg           $fg         $red        $red
-client.placeholder        $muted_dark $bg           $fg         $muted_dark $muted_dark
+client.focused            $accent     $selected     $fg         $accent     $accent
+client.focused_inactive   $surface    $selected     $muted      $surface    $surface
+client.unfocused          $bg         $bg           $muted      $bg         $bg
+client.urgent             $urgent     $bg           $fg         $urgent     $urgent
+client.placeholder        $surface    $bg           $fg         $surface    $surface
 client.background         $bg
