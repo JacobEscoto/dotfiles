@@ -1,96 +1,84 @@
 @import "colors.rasi"
 
 configuration {
-  font:                 "FiraCode 10";
-  show-icons:           false;
-  display-drun:         "";
-  drun-display-format:  "{name}";
-  disable-history:      false;
-  fullscreen:           false;
-  hide-scrollbar:       true;
-  sidebar-mode:         false;
+  font:                "Rubik 11";
+  show-icons:          false;
+  hide-scrollbar:      true;
+  sidebar-mode:        false;
+}
+
+* {
+  background-color:    transparent;
+  text-color:          @fg;
+  font:                "Rubik 11";
 }
 
 window {
-  transparency:     "real";
-  background-color: transparent;
-  text-color:       @fg;
-  width:            120px;
-  location:         east;
-  x-offset:         -4px;
-  y-offset:         0;
-}
-
-prompt {
-  enabled:          true;
-  padding:          0px 0px 0px 0px;
-  background-color: @bg;
-  text-color:       @fg;
-  expand:           true;
-  str:              "";
-  font:             "FiraCode 10";
-}
-
-inputbar {
-  children:         [ prompt ];
-  background-color: @bg;
-  text-color:       @fg;
-  expand:           false;
-  border:           0px 0px 0px 0px;
-  border-radius:    0px;
-  border-color:     @se;
-  margin:           0px;
-  padding:          10px;
-  horizontal-align: 0.5;
-}
-
-listview {
-  background-color: transparent;
-  padding:          5px;
-  columns:          1;
-  lines:            5;
-  spacing:          10px;
-  cycle:            true;
-  dynamic:          true;
-  fixed-columns:    true;
+  transparency:        "real";
+  location:            center;
+  anchor:              center;
+  fullscreen:          true;
+  background-color:    #11111BD9;
+  padding:             0px;
 }
 
 mainbox {
-  background-color: transparent;
-  border:           0px;
-  border-radius:    0px;
-  children:         [ listview ];
-  spacing:          5px;
-  padding:          5px;
+  orientation:         vertical;
+  children:            [ dummy-top, message, listview, dummy-bottom ];
+  spacing:             28px;
+  padding:             0px 28%;
+  background-color:    transparent;
+}
+
+dummy-top, dummy-bottom { expand: true; background-color: transparent; }
+
+message {
+  expand:              false;
+  background-color:    @se;
+  border:              1px;
+  border-color:        @muted;
+  border-radius:       999px;
+  padding:             12px 26px;
+  text-color:          @fg;
+  font:                "Rubik Medium 14";
+}
+
+listview {
+  expand:              false;
+  columns:             5;
+  lines:               1;
+  spacing:             20px;
+  layout:              vertical;
+  fixed-columns:       true;
+  fixed-height:        true;
+  dynamic:             false;
+  cycle:               true;
+  scrollbar:           false;
+  background-color:    transparent;
 }
 
 element {
-  background-color: @bg;
-  text-color:       @fg;
-  orientation:      vertical;
-  border:           2px;
-  border-radius:    50px;
-  border-color:     @muted;
-  padding:          20px 5px 20px 5px;
-}
-
-element-icon {
-  size: 0px;
+  orientation:         vertical;
+  background-color:    @se;
+  border:              1px;
+  border-color:        @muted;
+  border-radius:       999px;
+  padding:             30px 0px;
 }
 
 element-text {
-  background-color: transparent;
-  text-color:        inherit;
-  expand:            true;
-  horizontal-align:  0.5;
-  vertical-align:    0.5;
-  font:              "FiraCode 16";
+  expand:              true;
+  background-color:    transparent;
+  text-color:          inherit;
+  font:                "feather 16";
+  horizontal-align:    0.5;
+  vertical-align:      0.5;
+  padding:             0px;
+  margin:              0px;
 }
 
 element selected {
-  background-color: @se;
-  text-color:       @lightblue;
-  border:           2px;
-  border-radius:    50px;
-  border-color:     @lightblue;
+  background-color:    @muted;
+  text-color:          @lightblue;
+  border-color:        @lightblue;
 }
