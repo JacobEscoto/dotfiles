@@ -15,3 +15,7 @@ micro/backups/
 # Vim
 lazy-lock.json
 
+# Installer binary
+installer/installer
+installer/installer-linux-amd64
+
