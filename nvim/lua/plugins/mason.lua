@@ -16,12 +16,18 @@ return {
         "gopls",
         "lua_ls",
         "bashls",
+        "typescript-language-server",
+        "rust-analyzer",
+        "css-lsp",
+        "html-lsp",
+        "emmet-language-server",
 
         -- Formatters
         "stylua",
         "shfmt",
         "goimports",
         "gofumpt",
+        "prettier",
 
         -- Linters
         "luacheck",

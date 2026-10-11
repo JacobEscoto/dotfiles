@@ -10,6 +10,12 @@ vim.lsp.config("typescript-language-server", {
   cmd = { "typescript-language-server", "--stdio" },
   filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
   root_markers = { "tsconfig.json", "package.json", "jsconfig.json", ".git" },
+  init_options = {
+    preferences = {
+      quotePreference = "single",
+      importModuleSpecifierPreference = "relative",
+    },
+  },
 })
 
 -- LSP for Astro
@@ -88,6 +94,46 @@ vim.lsp.config("clangd", {
   },
 })
 
+vim.lsp.config("rust-analyzer", {
+  cmd = { "rust-analyzer" },
+  filetypes = { "rust" },
+  root_markers = { "Anchor.toml", ".git", "Cargo.toml" },
+  settings = {
+    ["rust-analyzer"] = {
+      cargo = {
+        allFeatures = true,
+        buildScripts = {
+          enable = true,
+        },
+      },
+      check = { command = "clippy" },
+      procMacro = { enable = true },
+    },
+  },
+})
+
+vim.lsp.config("cssls", {
+  cmd = { "vscode-css-language-server", "--stdio" },
+  filetypes = { "css", "scss", "less" },
+  root_markers = { "package.json", ".git" },
+  settings = {
+    css = { validate = true },
+    scss = { validate = true },
+  },
+})
+
+vim.lsp.config("html", {
+  cmd = { "vscode-html-language-server", "--stdio" },
+  filetypes = { "html" },
+  root_markers = { "package.json", ".git" },
+})
+
+vim.lsp.config("emmet_language_server", {
+  cmd = { "emmet-language-server", "--stdio" },
+  filetypes = { "html", "css", "javascriptreact", "typescriptreact" },
+  root_markers = { "package.json", ".git" },
+})
+
 vim.lsp.enable({
   "gopls",
   "lua-language-server",
@@ -95,6 +141,10 @@ vim.lsp.enable({
   "typescript-language-server",
   "astro-language-server",
   "clangd",
+  "rust-analyzer",
+  "cssls",
+  "html",
+  "emmet_language_server",
 })
 
 vim.diagnostic.config({
