@@ -5,20 +5,24 @@ My personal workflow configuration and customization for **Debian GNU/Linux**. T
 ## Contents
 
 ### System and window management
+
 - i3 + picom configuration
 - betterlockscreen configuration
 - dunst configuration
 - polybar + rofi configuration
 
 ### Terminal and shell environment
+
 - Kitty configuration
 - Fish configuration
 - Starship prompt configuration
 
 ### File management and exploration
+
 - Superfile configuration
 
 ### Code development and version control
+
 - Neovim configuration
 - Micro configuration
 - Git configuration
@@ -40,9 +44,9 @@ cd ~/dotfiles
 ```
 
 Flags supported:
+
 - `--dry-run`: Simulate installation without making system changes.
 - `--symlinks-only`: Only set up symlinks without installing packages.
 - `--packages-only`: Only install packages without modifying symlinks.
 - `--no-backup`: Overwrite existing targets without creating backups.
 - `-v`: Verbose output.
-

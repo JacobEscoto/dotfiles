@@ -78,9 +78,9 @@ chosen=$(menu -mesg "$info" -selected-row 0 <<<"$options")
 [[ -z "$chosen" ]] && exit 0
 
 case "$chosen" in
-"$poweroff") [[ "$(confirm)" == "$YES" ]] && systemctl poweroff ;;
-"$reboot") [[ "$(confirm)" == "$YES" ]] && systemctl reboot ;;
-"$suspend") [[ "$(confirm)" == "$YES" ]] && systemctl suspend ;;
-"$lock") lock_screen ;;
-"$logout") [[ "$(confirm)" == "$YES" ]] && logout_session ;;
+  "$poweroff") [[ "$(confirm)" == "$YES" ]] && systemctl poweroff ;;
+  "$reboot") [[ "$(confirm)" == "$YES" ]] && systemctl reboot ;;
+  "$suspend") [[ "$(confirm)" == "$YES" ]] && systemctl suspend ;;
+  "$lock") lock_screen ;;
+  "$logout") [[ "$(confirm)" == "$YES" ]] && logout_session ;;
 esac

@@ -140,20 +140,20 @@ main_menu() {
   choice=$(printf "%s\n" "${entries[@]}" | rofi_cmd)
 
   case "$choice" in
-  "")
-    exit 0
-    ;;
-  "$ICON_WIFI_OFF  Turn off Wi-Fi")
-    nmcli radio wifi off
-    notify "Wi-Fi" "Wi-Fi deactivated"
-    ;;
-  "$ICON_SEARCH  Search SSID manually")
-    manual_ssid
-    ;;
-  *)
-    IFS='|' read -r ssid security <<<"${net_map[$choice]}"
-    [[ -n "$ssid" ]] && connect_known_or_new "$ssid" "$security"
-    ;;
+    "")
+      exit 0
+      ;;
+    "$ICON_WIFI_OFF  Turn off Wi-Fi")
+      nmcli radio wifi off
+      notify "Wi-Fi" "Wi-Fi deactivated"
+      ;;
+    "$ICON_SEARCH  Search SSID manually")
+      manual_ssid
+      ;;
+    *)
+      IFS='|' read -r ssid security <<<"${net_map[$choice]}"
+      [[ -n "$ssid" ]] && connect_known_or_new "$ssid" "$security"
+      ;;
   esac
 }
 
