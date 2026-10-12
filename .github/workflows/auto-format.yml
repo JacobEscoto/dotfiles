@@ -26,6 +26,8 @@ jobs:
         run: |
           if find . -name "*.go" | grep -q .; then
             gofmt -s -w .
+          else
+            echo "`.go` files not found, skipping..."
           fi
 
       # Install & run shfmt for Bash scripting files
@@ -35,6 +37,8 @@ jobs:
         run: |
           if find . -name "*.sh" | grep -q .; then
             shfmt -w -i 2 -ci .
+          else
+            echo "`.sh` files not found, skipping..."
           fi
 
       # Install and run StyLua for `.lua` files (Neovim)
@@ -47,6 +51,8 @@ jobs:
         run: |
           if find . -name "*.lua" | grep -q .; then
             stylua .
+          else
+            echo "`.lua` files not found, skipping..."
           fi
 
       # Format files with Prettier (JSON, YAML, MD, TOML, etc.) 
