@@ -22,6 +22,8 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: 'stable'
+          cache: true
+          cache-dependency-path: installer/go.sum
       - name: Run gofmt
         run: |
           if find . -name "*.go" | grep -q .; then
@@ -42,26 +44,23 @@ jobs:
           fi
 
       # Install and run StyLua for `.lua` files (Neovim)
-      - name: Install StyLua
-        uses: JohnnyMorganz/stylua-action@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          version: latest
       - name: Run StyLua
         run: |
           if find . -name "*.lua" | grep -q .; then
-            stylua .
+            echo "`.lua` files found. Installing StyLua..."
+            STYLUA_VER=$(curl -s "https://api.github.com/repos/JohnnyMorganz/stylua/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
+            curl -sL "https://github.com/JohnnyMorganz/stylua/releases/download/v${STYLUA_VER}/stylua-linux-x86_64.zip" -o stylua.zip
+            unzip -q stylua.zip
+            chmod +x stylua
+            ./stylua .
+            rm stylua stylua.zip
           else
             echo "`.lua` files not found, skipping..."
           fi
 
-      # Format files with Prettier (JSON, YAML, MD, TOML, etc.) 
+      # Format files with Prettier (JSON, YAML, MD, etc.)
       - name: Run Prettier
-        uses: creyD/prettier_action@v4.3
-        with:
-          prettier_options: --write "**/*.{json,yaml,yml,md}"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx --yes prettier --write "**/*.{json,yaml,yml,md}"
 
       # 5. Create automatic PR if format changes
       - name: Create Pull Request with the changes
