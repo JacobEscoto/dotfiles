@@ -198,79 +198,79 @@ main_menu() {
   IFS='|' read -r cmd arg1 arg2 <<<"$action"
 
   case "$cmd" in
-  toggle_mute)
-    pactl set-sink-mute "$SINK" toggle
-    local new_mute
-    new_mute=$(get_sink_mute)
-    if [[ "$new_mute" == "yes" ]]; then
-      notify "Audio Muted" "Sound has been muted"
-    else
-      notify "Audio Unmuted" "Volume set to ${vol}%"
-    fi
-    ;;
-  vol_up)
-    pactl set-sink-volume "$SINK" +5%
-    local new_vol
-    new_vol=$(get_volume)
-    notify "Volume Increased" "Current volume: ${new_vol}%"
-    ;;
-  vol_down)
-    pactl set-sink-volume "$SINK" -5%
-    local new_vol
-    new_vol=$(get_volume)
-    notify "Volume Decreased" "Current volume: ${new_vol}%"
-    ;;
-  vol_set)
-    local target
-    target=$(rofi_prompt "Enter volume (0-100%):")
-    if [[ "$target" =~ ^[0-9]+$ ]]; then
-      if [ "$target" -gt 150 ]; then
-        target=150
+    toggle_mute)
+      pactl set-sink-mute "$SINK" toggle
+      local new_mute
+      new_mute=$(get_sink_mute)
+      if [[ "$new_mute" == "yes" ]]; then
+        notify "Audio Muted" "Sound has been muted"
+      else
+        notify "Audio Unmuted" "Volume set to ${vol}%"
       fi
-      pactl set-sink-volume "$SINK" "${target}%"
-      notify "Volume Set" "Volume set to ${target}%"
-    fi
-    ;;
-  toggle_mic_mute)
-    pactl set-source-mute "$SOURCE" toggle
-    local new_mic_mute
-    new_mic_mute=$(get_mic_mute)
-    if [[ "$new_mic_mute" == "yes" ]]; then
-      notify "Microphone Muted" "Mic input muted"
-    else
-      notify "Microphone Active" "Mic input enabled"
-    fi
-    ;;
-  bt_on)
-    timeout 2s bluetoothctl power on &>/dev/null
-    notify "Bluetooth" "Bluetooth powered ON"
-    ;;
-  bt_off)
-    timeout 2s bluetoothctl power off &>/dev/null
-    notify "Bluetooth" "Bluetooth powered OFF"
-    ;;
-  bt_connect)
-    notify "Bluetooth" "Connecting to $arg2..."
-    if timeout 5s bluetoothctl connect "$arg1" &>/dev/null; then
-      notify "Bluetooth" "Connected to $arg2"
-    else
-      notify "Bluetooth" "Failed to connect to $arg2"
-    fi
-    ;;
-  bt_disconnect)
-    timeout 3s bluetoothctl disconnect "$arg1" &>/dev/null
-    notify "Bluetooth" "Disconnected from $arg2"
-    ;;
-  set_sink)
-    pactl set-default-sink "$arg1"
-    for input in $(pactl list sink-inputs short 2>/dev/null | awk '{print $1}'); do
-      pactl move-sink-input "$input" "$arg1" 2>/dev/null
-    done
-    notify "Audio Output Changed" "Default sink set to: $arg2"
-    ;;
-  open_pavucontrol)
-    pavucontrol &
-    ;;
+      ;;
+    vol_up)
+      pactl set-sink-volume "$SINK" +5%
+      local new_vol
+      new_vol=$(get_volume)
+      notify "Volume Increased" "Current volume: ${new_vol}%"
+      ;;
+    vol_down)
+      pactl set-sink-volume "$SINK" -5%
+      local new_vol
+      new_vol=$(get_volume)
+      notify "Volume Decreased" "Current volume: ${new_vol}%"
+      ;;
+    vol_set)
+      local target
+      target=$(rofi_prompt "Enter volume (0-100%):")
+      if [[ "$target" =~ ^[0-9]+$ ]]; then
+        if [ "$target" -gt 150 ]; then
+          target=150
+        fi
+        pactl set-sink-volume "$SINK" "${target}%"
+        notify "Volume Set" "Volume set to ${target}%"
+      fi
+      ;;
+    toggle_mic_mute)
+      pactl set-source-mute "$SOURCE" toggle
+      local new_mic_mute
+      new_mic_mute=$(get_mic_mute)
+      if [[ "$new_mic_mute" == "yes" ]]; then
+        notify "Microphone Muted" "Mic input muted"
+      else
+        notify "Microphone Active" "Mic input enabled"
+      fi
+      ;;
+    bt_on)
+      timeout 2s bluetoothctl power on &>/dev/null
+      notify "Bluetooth" "Bluetooth powered ON"
+      ;;
+    bt_off)
+      timeout 2s bluetoothctl power off &>/dev/null
+      notify "Bluetooth" "Bluetooth powered OFF"
+      ;;
+    bt_connect)
+      notify "Bluetooth" "Connecting to $arg2..."
+      if timeout 5s bluetoothctl connect "$arg1" &>/dev/null; then
+        notify "Bluetooth" "Connected to $arg2"
+      else
+        notify "Bluetooth" "Failed to connect to $arg2"
+      fi
+      ;;
+    bt_disconnect)
+      timeout 3s bluetoothctl disconnect "$arg1" &>/dev/null
+      notify "Bluetooth" "Disconnected from $arg2"
+      ;;
+    set_sink)
+      pactl set-default-sink "$arg1"
+      for input in $(pactl list sink-inputs short 2>/dev/null | awk '{print $1}'); do
+        pactl move-sink-input "$input" "$arg1" 2>/dev/null
+      done
+      notify "Audio Output Changed" "Default sink set to: $arg2"
+      ;;
+    open_pavucontrol)
+      pavucontrol &
+      ;;
   esac
 }
 

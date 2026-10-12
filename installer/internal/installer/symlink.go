@@ -18,12 +18,12 @@ type SymlinkOptions struct {
 }
 
 type SymlinkSummary struct {
-	Total   int
-	Linked  int
-	Skipped int
+	Total    int
+	Linked   int
+	Skipped  int
 	BackedUp int
-	Failed  int
-	Errors  []string
+	Failed   int
+	Errors   []string
 }
 
 // LinkAll sets up all defined symlinks idempotently
