@@ -1,6 +1,12 @@
-# Jacob's dotfiles
+# ☕ Jacob's dotfiles
 
 My personal workflow configuration and customization for **Debian GNU/Linux**. This configuration is carefully chosen for extreme minimalism and to maximize my laptop's performance.
+
+## 📸 Gallery
+
+|  Neovim |  Kitty Terminal |
+| :---: | :---: |
+| <img src="screenshots/neovim-cfg.png" alt="Neovim" width="100%"/> | <img src="screenshots/kitty.png" alt="Kitty" width="100%"/> |
 
 ## Contents
 
