@@ -1,0 +1,72 @@
+name: Auto Format Dotfiles
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      # Install Go & format `.go` files
+      - name: Configure Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
+      - name: Run gofmt
+        run: |
+          if find . -name "*.go" | grep -q .; then
+            gofmt -s -w .
+          fi
+
+      # Install & run shfmt for Bash scripting files
+      - name: Install shfmt
+        run: sudo apt-get update && sudo apt-get install -y shfmt
+      - name: Run shfmt
+        run: |
+          if find . -name "*.sh" | grep -q .; then
+            shfmt -w -i 2 -ci .
+          fi
+
+      # Install and run StyLua for `.lua` files (Neovim)
+      - name: Install StyLua
+        uses: JohnnyMorganz/stylua-action@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          version: latest
+      - name: Run StyLua
+        run: |
+          if find . -name "*.lua" | grep -q .; then
+            stylua .
+          fi
+
+      # Format files with Prettier (JSON, YAML, MD, TOML, etc.) 
+      - name: Run Prettier
+        uses: creyD/prettier_action@v4.3
+        with:
+          prettier_options: --write "**/*.{json,yaml,yml,md}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 5. Create automatic PR if format changes
+      - name: Create Pull Request with the changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "style: code formatting and configurations"
+          title: "Automatic code formatting and configurations"
+          body: |
+            This PR was generated automatically by GitHub Actions to apply a clean format to code (Go, Shell, Lua, etc.).
+            Check the changes and merge it when wished.
+          branch: "bot/auto-format"
+          delete-branch: true
+          signoff: true
