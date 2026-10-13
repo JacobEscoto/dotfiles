@@ -4,8 +4,8 @@ My personal workflow configuration and customization for **Debian GNU/Linux**. T
 
 ## 📸 Gallery
 
-|  Neovim |  Kitty Terminal |
-| :---: | :---: |
+|                              Neovim                               |                       Kitty Terminal                        |
+| :---------------------------------------------------------------: | :---------------------------------------------------------: |
 | <img src="screenshots/neovim-cfg.png" alt="Neovim" width="100%"/> | <img src="screenshots/kitty.png" alt="Kitty" width="100%"/> |
 
 ## Contents
