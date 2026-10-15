@@ -73,6 +73,9 @@ bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/osd-brig
 # App launcher
 bindsym $mod+space exec --no-startup-id ~/.config/rofi/scripts/launcher.sh
 
+# Launch OpenCode
+bindsym $mod+Shift+o exec --no-startup-id ~/.local/bin/opencode-desktop.AppImage
+
 # File manager
 bindsym $mod+e exec --no-startup-id $file_manager
 
