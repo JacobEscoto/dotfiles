@@ -105,7 +105,7 @@ error-message {
   background-color: @bg;
   text-color:       @fg;
   border:           1px;
-  border-color:     @ac;
+  border-color:     @red;
   border-radius:    6px;
   padding:          10px;
 }

@@ -34,14 +34,11 @@ smart_gaps off
 # Enable touchpad tapping dynamically
 exec --no-startup-id ~/.config/i3/scripts/touchpad-setup.sh
 
-# Environment variable for dolphin
-exec --no-startup-id export XDG_MENU_PREFIX=plasma-
-
 # Run commands for desktop personalization (Workspaces, polybar, wallpaper and picom).
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id ~/.config/i3/scripts/set-wallpaper.sh
-exec_always --no-startup-id picom -b
-exec_always --no-startup-id dunst
+exec_always --no-startup-id pkill -x picom; picom -b
+exec_always --no-startup-id pkill -x dunst; dunst
 
 # Start flameshot in the background
 exec --no-startup-id flameshot
@@ -205,24 +202,3 @@ mode "resize" {
 # ========================================================
 for_window [class="dolphin"] floating enable, border none
 for_window [class="Polybar"] floating enable, border none
-
-# ========================================================
-#  COLORS
-# ========================================================
-
-# Theme colors
-set $bg           #11111b
-set $fg           #CDD6F4
-set $selected     #181825
-set $surface      #313244
-set $muted        #585B70
-set $accent       #89DCEB
-set $urgent       #E78284
-
-# class                   border      background    text        indicator   child_border
-client.focused            $accent     $selected     $fg         $accent     $accent
-client.focused_inactive   $surface    $selected     $muted      $surface    $surface
-client.unfocused          $bg         $bg           $muted      $bg         $bg
-client.urgent             $urgent     $bg           $fg         $urgent     $urgent
-client.placeholder        $surface    $bg           $fg         $surface    $surface
-client.background         $bg

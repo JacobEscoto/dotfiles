@@ -96,7 +96,6 @@ diverged = "[⇕⇡${ahead_count}⇣${behind_count}](mauve)"
 
 [custom.git_worktree]
 description = "Show indicator when inside a git worktree"
-shell = ["fish", "-c"]
 command = """
 if git rev-parse --git-dir >/dev/null 2>&1
       set common_dir (git rev-parse --path-format=absolute --git-common-dir 2>/dev/null)

@@ -1,8 +1,8 @@
 #-- File Editor
-editor = ""
+editor = "nvim"
 
 #-- Directory Editor
-dir_editor = ""
+dir_editor = "nvim"
 
 #-- Automatically check for updates
 auto_check_update = true
@@ -10,11 +10,8 @@ auto_check_update = true
 cd_on_quit = false
 debug = false
 
-#-- Theme
-theme = ""
-
 #-- Code Previewer
-code_previewer = ""
+code_previewer = "nvim"
 
 #-- File and Image preview
 default_open_file_preview = true
@@ -24,7 +21,7 @@ show_image_preview = true
 show_panel_footer_info = true
 
 #-- Default Directory
-default_directory = "." 
+default_directory = "."
 
 #-- File Size Units
 file_size_use_si = true
@@ -85,13 +82,14 @@ border_middle_left = '├'
 border_middle_right = '┤'
 
 #-- Detailed Metadata
-metadata = false
+# Enabled so the focus_on_metadata hotkey ('m') has a panel to focus.
+metadata = true
 
 #-- MD5 Checksum Generation
 enable_md5_checksum = false
 
 #-- Zoxide Support
-zoxide_support = true 
+zoxide_support = true
 
 [open_with]
 conf = "nvim"
