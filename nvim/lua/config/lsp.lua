@@ -1,7 +1,5 @@
 -- Native LSP Configuration
 
-local lsp_config = {}
-
 local mason_sdk = vim.fn.stdpath("data") .. "/mason/packages/typescript-language-server/node_modules/typescript/lib"
 
 -- LSP for TypeScript and JavaScript
@@ -220,5 +218,3 @@ for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
-
-return lsp_config

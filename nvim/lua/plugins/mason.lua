@@ -18,9 +18,11 @@ return {
         "bashls",
         "typescript-language-server",
         "rust-analyzer",
+        "clangd",
         "css-lsp",
         "html-lsp",
         "emmet-language-server",
+        "astro-language-server",
         "tailwindcss-language-server",
         "pyright",
 

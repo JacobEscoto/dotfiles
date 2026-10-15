@@ -40,16 +40,6 @@ return {
             key = "g",
           },
           {
-            action = function()
-              if _G.PersistedSnacksPicker then
-                _G.PersistedSnacksPicker()
-              end
-            end,
-            desc = " Restore session",
-            icon = "󰦛 ",
-            key = "s",
-          },
-          {
             action = "Lazy",
             desc = " Lazy",
             icon = "󰒲 ",

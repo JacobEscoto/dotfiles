@@ -13,7 +13,7 @@ micro/backups/
 
 
 # Vim
-lazy-lock.json
+# nvim/lazy-lock.json is tracked on purpose: it pins plugin versions.
 
 # Installer binary
 installer/installer

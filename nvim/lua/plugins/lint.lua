@@ -12,7 +12,7 @@ return {
       lua = { "luacheck" },
       sh = { "shellcheck" },
       bash = { "shellcheck" },
-      go = { "golangcilint" },
+      go = { "golangci_lint" },
       python = { "ruff" },
     }
 
