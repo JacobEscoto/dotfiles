@@ -21,6 +21,8 @@ return {
         "css-lsp",
         "html-lsp",
         "emmet-language-server",
+        "tailwindcss-language-server",
+        "pyright",
 
         -- Formatters
         "stylua",
@@ -33,6 +35,7 @@ return {
         "luacheck",
         "shellcheck",
         "golangci-lint",
+        "ruff",
       },
 
       run_on_start = true,

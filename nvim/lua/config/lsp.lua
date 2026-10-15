@@ -1,5 +1,4 @@
 -- Native LSP Configuration
--- Supports: Go, Lua, Bash, Astro, Typescript
 
 local lsp_config = {}
 
@@ -30,6 +29,34 @@ vim.lsp.config("astro-language-server", {
   },
 })
 
+-- LSP for TailwindCSS
+vim.lsp.config("tailwindcss", {
+  cmd = { "tailwindcss-language-server", "--stdio" },
+  filetypes = {
+    "html",
+    "css",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "astro",
+  },
+  root_markers = {
+    "tailwind.config.js",
+    "tailwind.config.cjs",
+    "tailwind.config.mjs",
+    "tailwind.config.ts",
+    "package.json",
+    ".git",
+  },
+  settings = {
+    tailwindCSS = {
+      classAttributes = { "class", "className", "class:list", "classList" },
+    },
+  },
+})
+
+-- LSP for Golang
 vim.lsp.config("gopls", {
   cmd = { "gopls" },
   filetypes = { "go", "gomod", "gowork" },
@@ -47,6 +74,7 @@ vim.lsp.config("gopls", {
   },
 })
 
+-- LSP for Lua
 vim.lsp.config("lua-language-server", {
   cmd = { "lua-language-server" },
   filetypes = { "lua" },
@@ -72,6 +100,7 @@ vim.lsp.config("lua-language-server", {
   },
 })
 
+-- LSP for Bash scripting
 vim.lsp.config("bash-language-server", {
   cmd = { "bash-language-server", "start" },
   filetypes = { "bash", "sh", "zsh" },
@@ -83,6 +112,7 @@ vim.lsp.config("bash-language-server", {
   },
 })
 
+-- LSP for C/C++
 vim.lsp.config("clangd", {
   cmd = { "clangd", "--background-index", "--clang-tidy" },
   filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
@@ -94,6 +124,7 @@ vim.lsp.config("clangd", {
   },
 })
 
+-- LSP for Rust
 vim.lsp.config("rust-analyzer", {
   cmd = { "rust-analyzer" },
   filetypes = { "rust" },
@@ -112,6 +143,30 @@ vim.lsp.config("rust-analyzer", {
   },
 })
 
+-- LSP for Python
+vim.lsp.config("pyright", {
+  cmd = { "pyright-langserver", "--stdio" },
+  filetypes = { "python" },
+  root_markers = {
+    "pyproject.toml",
+    "setup.py",
+    "setup.cfg",
+    "requirements.txt",
+    "pyrightconfig.json",
+    ".git",
+  },
+  settings = {
+    python = {
+      analysis = {
+        typeCheckingMode = "standard",
+        autoSearchPaths = true,
+        useLibraryCodeForTypes = true,
+      },
+    },
+  },
+})
+
+-- LSP for Vanilla HTML & CSS
 vim.lsp.config("cssls", {
   cmd = { "vscode-css-language-server", "--stdio" },
   filetypes = { "css", "scss", "less" },
@@ -145,6 +200,8 @@ vim.lsp.enable({
   "cssls",
   "html",
   "emmet_language_server",
+  "tailwindcss",
+  "pyright",
 })
 
 vim.diagnostic.config({

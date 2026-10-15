@@ -21,6 +21,7 @@ return {
       css = { "prettier" },
       html = { "prettier" },
       json = { "prettier" },
+      python = { "ruff_organize_imports", "ruff_format" },
     },
   },
 
