@@ -13,18 +13,18 @@
     text_icon_padding  = 10
 
     # Border
-    frame_width   = 1
-    frame_color   = "#17222B"
+    frame_width   = 2
+    frame_color   = "#658594"
 
     # Separator
     separator_height = 1
-    separator_color  = "#3F5360"
+    separator_color  = "#363646"
 
     # Radius
     corner_radius = 8
 
     # Font
-    font = JetBrains Mono 10
+    font = Rubik 12
 
     # Text format
     markup    = full
@@ -49,16 +49,19 @@
     mouse_right_click  = close_all
 
 [urgency_low]
-    background = "#0F151C"
-    foreground = "#C4C7C5"
+    background = "#1F1F28"
+    foreground = "#DCD7BA"
+    frame_color = "#2D4F67"
     timeout    = 5
 
 [urgency_normal]
-    background = "#0F151C"
-    foreground = "#C4C7C5"
+    background = "#1F1F28"
+    foreground = "#DCD7BA"
+    frame_color = "#658594"
     timeout    = 5
 
 [urgency_critical]
-    background = "#0F151C"
-    foreground = "#EC7875"
+    background = "#1F1F28"
+    foreground = "#FF5D62"
+    frame_color = "#E46876"
     timeout    = 10
