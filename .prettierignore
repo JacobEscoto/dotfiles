@@ -1,2 +1,5 @@
 # Ignore GitHub Actions workflows to prevent GITHUB_TOKEN permission issues
 .github/workflows/**
+
+# Neovim lockfile
+nvim/lazy-lock.json
