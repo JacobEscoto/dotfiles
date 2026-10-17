@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# Icons are plain SVGs in i3/icons/, coloured to the Kanagawa palette.
+# dunst loads them directly via `-i <path>`, so no markup is involved.
+# NOTE: do not try to inline Nerd Font glyphs in the text instead --
+# dunst's `markup = full` only understands <b>/<i>/<s>/<u>, so a
+# <span font="..."> is rendered literally as text.
+ICONS="$(cd "$(dirname "${BASH_SOURCE[0]}")/../icons" && pwd)"
+
 BATTERY="BAT1"
 CHECK_INTERVAL=30
 WARN_LEVEL=20
@@ -41,7 +48,7 @@ notify() {
   local title=$3
   local message=$4
 
-  dunstify -a "battery" -u "$urgency" -i "$icon" -h string:x-dunst-stack-tag:battery \
+  dunstify -a "battery" -u "$urgency" -i "$ICONS/$icon.svg" -h string:x-dunst-stack-tag:battery \
     "$title" "$message"
 }
 
