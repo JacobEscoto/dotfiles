@@ -3,7 +3,5 @@
   "Alt-Down": "MoveLinesDown",
   "Alt-Up": "MoveLinesUp",
   "Alt-s": "Save,Quit",
-  "Ctrl-/": "lua:comment.comment",
   "Ctrl-Shift-K": "DeleteLine",
-  "CtrlUnderscore": "lua:comment.comment"
 }
