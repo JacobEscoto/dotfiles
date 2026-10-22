@@ -3,5 +3,5 @@
   "Alt-Down": "MoveLinesDown",
   "Alt-Up": "MoveLinesUp",
   "Alt-s": "Save,Quit",
-  "Ctrl-Shift-K": "DeleteLine",
+  "Ctrl-Shift-K": "DeleteLine"
 }
