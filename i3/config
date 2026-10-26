@@ -37,8 +37,8 @@ exec --no-startup-id ~/.config/i3/scripts/touchpad-setup.sh
 # Run commands for desktop personalization (Workspaces, polybar, wallpaper and picom).
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id ~/.config/i3/scripts/set-wallpaper.sh
-exec_always --no-startup-id pkill -x picom; picom -b
-exec_always --no-startup-id pkill -x dunst; dunst
+exec_always --no-startup-id bash -c "pkill -x picom; picom -b"
+exec_always --no-startup-id bash -c "pkill -x dunst; dunst"
 
 # Start flameshot in the background
 exec --no-startup-id flameshot
