@@ -38,6 +38,7 @@ vim.lsp.config("tailwindcss", {
     "typescript",
     "typescriptreact",
     "astro",
+    "svelte",
   },
   root_markers = {
     "tailwind.config.js",
@@ -52,6 +53,13 @@ vim.lsp.config("tailwindcss", {
       classAttributes = { "class", "className", "class:list", "classList" },
     },
   },
+})
+
+-- LSP for Svelte
+vim.lsp.config("svelte-language-server", {
+  cmd = { "svelteserver", "--stdio" },
+  filetypes = { "svelte" },
+  root_markers = { "svelte.config.js", "svelte.config.ts", "package.json", ".git" },
 })
 
 -- LSP for Golang
@@ -117,7 +125,7 @@ vim.lsp.config("clangd", {
   root_markers = {
     "compile_commands.json",
     "compile_flags.txt",
-    ".clang-d",
+    ".clangd",
     ".git",
   },
 })
@@ -193,6 +201,7 @@ vim.lsp.enable({
   "bash-language-server",
   "typescript-language-server",
   "astro-language-server",
+  "svelte-language-server",
   "clangd",
   "rust-analyzer",
   "cssls",

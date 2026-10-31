@@ -20,6 +20,7 @@ return {
       "css",
       "python",
       "rust",
+      "svelte",
     })
 
     vim.api.nvim_create_autocmd("FileType", {
@@ -39,6 +40,7 @@ return {
         "html",
         "css",
         "python",
+        "svelte",
         "rust",
       },
       callback = function()

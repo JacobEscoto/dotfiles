@@ -23,6 +23,7 @@ return {
         "html-lsp",
         "emmet-language-server",
         "astro-language-server",
+        "svelte-language-server",
         "tailwindcss-language-server",
         "pyright",
 
