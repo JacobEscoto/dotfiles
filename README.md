@@ -8,7 +8,7 @@ My personal workflow configuration and customization for **Debian GNU/Linux**. T
 | :---------------------------------------------------------------: | :---------------------------------------------------------: |
 | <img src="screenshots/neovim-cfg.png" alt="Neovim" width="100%"/> | <img src="screenshots/kitty.png" alt="Kitty" width="100%"/> |
 
-## Contents
+## 📎 Contents
 
 ### System and window management
 
@@ -33,7 +33,7 @@ My personal workflow configuration and customization for **Debian GNU/Linux**. T
 - Micro configuration
 - Git configuration
 
-## Installation
+## 🚀 Installation
 
 You can install and bootstrap the dotfiles onto a fresh Debian/Ubuntu machine using the automated CLI installer:
 
