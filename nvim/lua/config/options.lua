@@ -22,7 +22,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.termguicolors = true
 vim.opt.updatetime = 250
 
--- Native Neovim explorer
+-- Native Neovim explorer; Netwr deactivated
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.netrw_banner = 0

@@ -21,6 +21,7 @@ return {
       "python",
       "rust",
       "svelte",
+      "java",
     })
 
     vim.api.nvim_create_autocmd("FileType", {
@@ -42,6 +43,7 @@ return {
         "python",
         "svelte",
         "rust",
+        "java",
       },
       callback = function()
         vim.treesitter.start()

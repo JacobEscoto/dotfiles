@@ -195,6 +195,30 @@ vim.lsp.config("emmet_language_server", {
   root_markers = { "package.json", ".git" },
 })
 
+-- LSP for Java (Maven)
+vim.lsp.config("jdtls", {
+  cmd = function(dispatchers, config)
+    local root = config.root_dir or vim.fn.getcwd()
+    local project = vim.fn.fnamemodify(root, ":p:h:t")
+    local workspace = vim.fn.stdpath("cache") .. "/jdtls/" .. project
+    return vim.lsp.rpc.start({ "jdtls", "-data", workspace }, dispatchers, {
+      cwd = config.cmd_cwd,
+      env = config.cmd_env,
+    })
+  end,
+  filetypes = { "java" },
+  root_markers = { "pom.xml", "mvnw", "build.gradle", ".git" },
+  settings = {
+    java = {
+      configuration = { updateBuildConfiguration = "automatic" },
+      import = { maven = { enabled = true } },
+      maven = { downloadSources = true },
+      signatureHelp = { enabled = true },
+      completion = { favoriteStaticMembers = {} },
+    },
+  },
+})
+
 vim.lsp.enable({
   "gopls",
   "lua-language-server",
@@ -209,6 +233,7 @@ vim.lsp.enable({
   "emmet_language_server",
   "tailwindcss",
   "pyright",
+  "jdtls",
 })
 
 vim.diagnostic.config({

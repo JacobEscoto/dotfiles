@@ -26,6 +26,7 @@ return {
         "svelte-language-server",
         "tailwindcss-language-server",
         "pyright",
+        "jdtls",
 
         -- Formatters
         "stylua",
@@ -33,6 +34,7 @@ return {
         "goimports",
         "gofumpt",
         "prettier",
+        "google-java-format",
 
         -- Linters
         "luacheck",

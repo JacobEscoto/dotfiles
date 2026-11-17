@@ -22,6 +22,16 @@ return {
       html = { "prettier" },
       json = { "prettier" },
       python = { "ruff_organize_imports", "ruff_format" },
+      qml = { "qmlformat" },
+      java = { "google-java-format" },
+    },
+
+    formatters = {
+      qmlformat = {
+        command = "qmlformat",
+        args = { "-i", "-w", "4", "$FILENAME" },
+        stdin = false,
+      },
     },
   },
 

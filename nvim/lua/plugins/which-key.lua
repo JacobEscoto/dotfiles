@@ -13,11 +13,6 @@ return {
     wkey.setup({
       preset = "helix",
       delay = 0,
-      icons = {
-        breadcrumb = "»",
-        separator = "➜",
-        group = "▸",
-      },
     })
 
     wkey.add({
@@ -50,11 +45,6 @@ return {
         "<leader>sg",
         desc = "Grep",
       },
-      {
-        "<leader>sb",
-        desc = "Buffers",
-      },
-
       {
         "<leader>f",
         group = "Files",
@@ -117,6 +107,11 @@ return {
         "<leader>?",
         desc = "Which-key",
         icon = "",
+      },
+      {
+        "<leader>m",
+        group = "Markdown",
+        icon = "",
       },
     })
   end,
