@@ -35,11 +35,6 @@ vim.keymap.set("n", "<leader>sg", function()
   Snacks.picker.grep()
 end, { desc = "Grep Search" })
 
--- Buffers
-vim.keymap.set("n", "<leader>sb", function()
-  Snacks.picker.buffers()
-end, { desc = "Search Buffers" })
-
 -- Notifications
 vim.keymap.set("n", "<leader>N", function()
   Snacks.notifier.show_history()
@@ -67,3 +62,10 @@ vim.keymap.set("n", "[b", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
 vim.keymap.set("n", "]b", "<cmd>bnext<cr>", { desc = "Next buffer" })
 
 vim.keymap.set("n", "<C-A-q>", ":qa<CR>", { desc = "Quit Neovim" })
+
+-- Terminal
+vim.keymap.set("n", "<leader>t", "<cmd>ToggleTerm<cr>", { desc = "Terminal" })
+
+-- Maven
+vim.keymap.set("n", "<leader>mc", "<cmd>!mvn -q compile<cr>", { desc = "Maven compile" })
+vim.keymap.set("n", "<leader>mt", "<cmd>!mvn -q test<cr>", { desc = "Maven test" })
