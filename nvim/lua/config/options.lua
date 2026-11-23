@@ -17,6 +17,9 @@ vim.opt.autoindent = true
 vim.opt.cursorline = true
 vim.opt.hidden = true
 
+-- Fold / Unfold
+vim.opt.foldlevel = 99
+
 -- System
 vim.opt.clipboard = "unnamedplus"
 vim.opt.termguicolors = true
